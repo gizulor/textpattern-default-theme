@@ -5,8 +5,8 @@
         </a>
     </h4>
 
-    <!-- if the article has an excerpt, display that -->
     <txp:if_excerpt>
+        <!-- if the article has an excerpt -->
         <div itemprop="description">
             <txp:excerpt />
         </div>
