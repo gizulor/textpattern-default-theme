@@ -1,0 +1,25 @@
+// tables
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  display: block;
+
+  input,
+  textarea,
+  select {
+    padding: 0 var(--gap--ss);
+  }
+}
+
+tr {
+  border-bottom: var(--border-width) solid currentcolor;
+}
+
+td,
+th {
+  text-align: start;
+  vertical-align: baseline;
+  padding: var(--gap--ss);
+}
+

@@ -1,0 +1,40 @@
+@use "../0-settings/breakpoints";
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: var(--sans);
+  font-weight: var(--font-normal);
+  line-height: var(--base-line-height);
+
+  /* Variable font-scaling */
+  --min-fs-rem: var(--min-fs) * 1rem;
+  --max-fs-rem: var(--max-fs) * 1rem;
+  --min-vw-rem: var(--min-vw) * 1rem;
+  --slope: (var(--max-fs) - var(--min-fs)) * (100vw - var(--min-vw-rem)) / (var(--max-vw) - var(--min-vw));
+  font-size: clamp(var(--min-fs-rem), var(--min-fs-rem) + var(--slope), var(--max-fs-rem));
+
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+
+  > * {
+    padding: var(--gap);
+    /* limit content width (omit for full-width) */
+    max-width: breakpoints.$desktop;
+    margin-inline: auto;
+  }
+}
+
+
+/* Hide, but not for screen-readers */
+.visually-hidden {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
