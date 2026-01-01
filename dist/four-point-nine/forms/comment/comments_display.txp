@@ -1,11 +1,11 @@
 <!-- if there are comments, display them (note: example code below overrides the global preference setting for comments wrapping by stating
      attributes of wraptag="" and break="", you are instead using ol and li tags below)... -->
 <txp:if_comments>
-
+<hr />
     <section id="comments-head">
-        <h3>
+        <h4>
             <txp:text item="comments" />
-        </h3>
+        </h4>
         <ol class="comments-list">
 
             <txp:comments wraptag="" break="li" /> <!-- links by default to form: 'comments.comment.txp' unless you specify a different form -->
@@ -30,9 +30,9 @@
 
     <txp:if_comments_preview>
         <section id="comments-head">
-            <h3>
+            <h4>
                 <txp:text item="comments" />
-            </h3>
+            </h4>
             <ol class="comments-list">
                 <li>
                     <p id="cpreview">
@@ -50,9 +50,9 @@
 
         <txp:if_comments_allowed>
             <section id="comments-head">
-                <h3>
+                <h4>
                     <txp:text item="comments" />
-                </h3>
+                </h4>
                 <p>
                     <txp:text item="no_comments" />
                 </p>
@@ -67,9 +67,9 @@
     <section id="comments-form">
 
         <!-- comment invite text is taken for the article's comment invitation field on the 'write' screen -->
-        <h3>
+        <h4>
             <txp:comments_invite showcount="0" textonly showalways />
-        </h3>
+        </h4>
 
         <!-- links by default to form: 'comment_form.comment.txp' unless you specify a different form -->
         <txp:comments_form />
