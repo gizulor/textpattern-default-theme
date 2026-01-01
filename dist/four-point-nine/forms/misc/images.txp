@@ -27,11 +27,12 @@
 
     <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <txp:variable name="img-tag" />
-
+        <txp:if_individual_article>
         <!-- you do not need to specify the attribute type="caption" as that is the default setting for <txp:image_info /> tag -->
         <figcaption itemprop="caption">
             <txp:image_info escape="textile"/>
         </figcaption>
+        </txp:if_individual_article>
 
     </figure>
 
