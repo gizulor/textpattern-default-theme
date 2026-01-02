@@ -1,17 +1,17 @@
 <!-- store the img tag as a variable so the same code can be used in any context -->
 <txp:variable name="img-tag">
     <img loading="lazy" itemprop="url contentUrl" alt="<txp:image_info type='alt' default='-' />"
-    srcset="<txp:image_url thumbnail width="320" /> 320w,
-        <txp:image_url thumbnail width="640" /> 640w,
-        <txp:image_url thumbnail width="1280" /> 1280w,
-        <txp:image_url thumbnail width="2560" /> 2560w"
-    width="<txp:image_info type="w" />"
-    height="<txp:image_info type="h" />"
-    sizes="auto" />
+        srcset="<txp:image_url thumbnail width="320" /> 320w,
+            <txp:image_url thumbnail width="640" /> 640w,
+            <txp:image_url thumbnail width="1280" /> 1280w,
+            <txp:image_url thumbnail width="2560" /> 2560w"
+        width="<txp:image_info type="w" />"
+        height="<txp:image_info type="h" />"
+        sizes="auto"
+    />
     <meta itemprop="width" content="<txp:image_info type="w" />">
     <meta itemprop="height" content="<txp:image_info type="h" />">
 </txp:variable>
-
 
 <!-- set up a variable to check whether an image also has a caption associated with it... -->
 <txp:variable name="caption" value='<txp:image_info />' />
