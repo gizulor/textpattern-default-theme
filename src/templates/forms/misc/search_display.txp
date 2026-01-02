@@ -16,8 +16,8 @@
         </h3>
     </txp:if_search_results>
 
-<!-- if no search results, then display no search results message -->
 <txp:else />
+    <!-- if no search results, then display no search results message -->
     <h3>
         <txp:text item="no_search_matches" />
     </h3>
@@ -27,8 +27,8 @@
 <!-- display resulting articles (10 per page; default setting) -->
 <txp:article[1] class="article-list" wraptag="ul" />
 
-<!-- check if there are further results and provide pagination links depending on the result -->
 <txp:if_search_results min="11">
+<!-- check if there are further results and provide pagination links depending on the result -->
     <nav class="paginator" aria-label="<txp:text item="page_nav" />">
         <txp:evaluate>
             <txp:newer rel="prev">
