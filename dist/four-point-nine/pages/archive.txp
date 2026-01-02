@@ -3,7 +3,6 @@
 
 <txp:output_form form="head" />
 
-
 <txp:if_search>
     <body class="search-page" itemscope itemtype="https://schema.org/SearchResultsPage">
 <txp:else />
@@ -16,34 +15,30 @@
 
     <txp:output_form form="body_header" />
 
-    <div class="wrapper">
-        <div class="container">
+        <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/Blog">
 
-            <!-- Main content -->
-            <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/Blog">
+            <txp:if_search>
+                <!-- search results -->
+                <txp:output_form form="search_display" />
+            <txp:else />
+                <txp:if_article_list>
+                    <h1 itemprop="name"><txp:section title />
+                        <txp:evaluate>: <small><txp:category title /></small></txp:evaluate>
+                    </h1>
 
-                <txp:if_search>
-                    <!-- search results -->
-                    <txp:output_form form="search_display" />
+                    <!-- default limit is 10 articles -->
+                   <txp:article class="article-list" form="article_listing"  wraptag="ul" class="list-bare auto-grid" />
                 <txp:else />
-                    <txp:if_article_list>
-                        <h1 itemprop="name"><txp:section title /></h1>
-                        <!-- default limit is 10 articles -->
-                       <txp:article class="article-list" form="article_listing"  wraptag="ul" />
-                    <txp:else />
-                        <txp:article status />
-                    </txp:if_article_list>
-                     <txp:output_form form="body_pagination" />
-               </txp:if_search>
+                    <txp:article status />
+                </txp:if_article_list>
+                <txp:output_form form="body_pagination" />
+           </txp:if_search>
+            <hr />
 
-            </main>
+        </main>
 
-            <txp:output_form form="body_aside" />
+        <txp:output_form form="body_aside" />
+        <txp:output_form form="body_footer" />
 
-        </div> <!-- /.container -->
-    </div> <!-- /.wrapper -->
-
-    <txp:output_form form="body_footer" />
-
-</body>
+    </body>
 </html>
