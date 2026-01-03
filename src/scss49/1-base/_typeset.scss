@@ -163,17 +163,10 @@ hr {
 }
 
 p>img,
-p>[itemprop="image"] {
-  float: left;
-  width: 50%;
-  margin-right: var(--gap);
-  margin-top: var(--gap--ss);
+p>figure {
+  margin-block: var(--gap);
 }
 
-p:has(> img),
-p:has(> [itemprop="image"]) {
-  overflow: auto;
-}
 
 table,
 pre {
