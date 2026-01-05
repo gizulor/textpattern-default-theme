@@ -1,0 +1,49 @@
+:root {
+   /* Variable font-sizing to suit viewport size */
+   --min-fs: .8125; /* min size in rems */
+   --max-fs: 1;     /* max size in rems */
+   --min-vw: 20;    /* min viewport width in rems */
+   --max-vw: 108;   /* max viewport width in rems */
+
+   /* Type */
+   --sans: system-ui, sans-serif;
+   --serif: 'PT Serif', Baskerville, serif;
+   --mono: ui-monospace, monospace;
+   --font-body: var(--sans);
+   --font-heading: var(--serif);
+   --font-normal: 300;
+   --font-heavy: 500;
+   --heading-weight: var(--font-heavy);
+   --base-line-height: 1.5;
+   --type-measure: 96ch;
+   /* Heading sizes (Major Third type scale) */
+   --h1: 3.052rem;
+   --h2: 2.441rem;
+   --h3: 1.953rem;
+   --h4: 1.563rem;
+   --h5: 1.25rem;
+   --h6: 1rem;
+
+   /* UI spacing */
+   --gap: 1lh;
+   --gap--s: calc(var(--gap) / 2);
+   --gap--ss: calc(var(--gap) / 4);
+   --gap--b: calc(var(--gap) * 2);
+   --border-width: 2px;
+
+   /* Colour assignments */
+   --clr-text: var(--black);
+   --clr-heading: var(--clr-text);
+   --clr-bg: var(--white);
+   --clr-bg--header: var(--white);
+   --clr-link:  var(--clr-text);
+   --clr-border: var(--clr-text);
+   ::selection {
+     background-color: var(--clr-text);
+     color: var(--clr-bg);
+   }
+
+   @media(max-width: breakpoints.$small) {
+      --gap: .5lh;
+   }
+}
