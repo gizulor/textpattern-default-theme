@@ -4,10 +4,30 @@
     <title><txp:page_title /></title>
 
     <!-- CSS -->
+<txp:hide>
+    <!-- Temp: during development -->
     <txp:css format="link" media="" />
-    <!-- ...or you can use (faster) external CSS files e.g. <link rel="stylesheet" href="<txp:page_url type="theme_path" />/styles/default.css"> -->
+</txp:hide>
+    <!-- or use external CSS files so you can open them in your preferred editor -->
+    <link rel="stylesheet" href="<txp:page_url type="theme_path" />/styles/default.css">
 
     <meta name="generator" content="Textpattern CMS">
+<txp:hide>
+    <!-- Temp: for reference -->
+    <txp:if_article_list type="author, c, month, pg, q">
+        <!-- not section frontpage -->
+
+        <!-- shift appends pg parameter to all page links, even the first one -->
+        <txp:newer shift /> - <txp:older />
+    <txp:else />
+        <txp:article pgonly /> <!-- set up pagination -->
+
+        <!-- shift="0" outputs the current page link with pg parameter appended -->
+        <txp:older shift="0" />
+    </txp:if_article_list>
+</txp:hide>
+
+
 
     <txp:if_search>
         <meta name="robots" content="none">
@@ -16,6 +36,11 @@
             <meta name="robots" content="noindex, follow">
         <txp:else />
             <txp:meta_description />
+
+
+
+
+
             <txp:variable name="page" value='<txp:page_url type="pg" />' />
 
             <txp:if_section name=",default">
@@ -27,15 +52,7 @@
                     <!-- default / homepage-->
                       <meta name="robots" content="index, follow">
                       <link rel="canonical" href="<txp:site_url />">
-                      <script type="application/ld+json">
-                          {
-                              "@context": "https://schema.org",
-                              "@type": "WebSite",
-                              "headline": "<txp:site_name escape="json" />",
-                              <txp:if_description>"description": "<txp:meta_description format="" escape="json" />",</txp:if_description>
-                              "url": "<txp:site_url escape="json" />"
-                          }
-                      </script>
+                      <txp::schema type="WebPage" url='<txp:site_url escape="json" />'/>
                   <txp:else />
                       <meta name="robots" content="noindex, follow">
                   </txp:if_variable>
@@ -45,20 +62,10 @@
             <txp:else />
 
               <txp:if_article_list>
-
-
                   <txp:if_variable name="page" value="1">
                       <meta name="robots" content="index, follow">
                       <link rel="canonical" href="<txp:section url />">
-                      <script type="application/ld+json">
-                          {
-                              "@context": "https://schema.org",
-                              "@type": "Blog",
-                              "headline": "<txp:section title escape="json" />",
-                              <txp:if_description>"description": "<txp:meta_description format="" escape="json" />",</txp:if_description>
-                              "url": "<txp:section url escape="json" />"
-                          }
-                      </script>
+                      <txp::schema type="WebPage" url='<txp:section url escape="json" />'/>
                   <txp:else />
                       <meta name="robots" content="noindex, follow">
                   </txp:if_variable>
@@ -67,6 +74,8 @@
                   <txp:meta_author title />
                   <meta name="robots" content="<txp:if_expires>unavailable_after: <txp:expires gmt format="%d-%b-%y %T" /> GMT<txp:else />index, follow</txp:if_expires>">
                   <link rel="canonical" href="<txp:permlink />">
+                  <txp::schema type="WebPage" url='<txp:permlink escape="json" />'/>
+
                   <meta property="og:site_name" content="<txp:site_name />">
                   <meta property="og:type" content="article">
                   <meta property="og:title" content="<txp:title />">
@@ -80,18 +89,6 @@
                           <meta property="og:image:alt" content="<txp:image_info type="alt" />">
                       </txp:images>
                   </txp:if_article_image>
-                  <script type="application/ld+json">
-                      {
-                          "@context": "https://schema.org",
-                          "@type": "Blog",
-                          "blogPost": [{
-                              "@type": "BlogPosting",
-                              "headline": "<txp:title escape="json" />",
-                              <txp:if_description>"description": "<txp:meta_description format="" escape="json" />",</txp:if_description>
-                              "url": "<txp:permlink escape="json" />"
-                          }]
-                      }
-                  </script>
               </txp:if_article_list>
             </txp:if_section>
 
