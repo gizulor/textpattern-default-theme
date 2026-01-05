@@ -1,9 +1,7 @@
-<a class="visually-hidden" href="#main">
-    <txp:text item="go_content" />
-</a>
+<a class="visually-hidden" href="#main"><txp:text item="go_content" /></a>
 <header class="site-header">
     <div>
-        <txp:link_to_home wraptag="h2"><txp:site_name /></txp:link_to_home>
+        <txp:link_to_home class="site-name"><txp:site_name /></txp:link_to_home>
         <txp:site_slogan wraptag="p" />
     </div>
     <nav id="navigation" class="site-navigation" aria-label="<txp:text item=" site_nav" />" itemscope itemtype="https://schema.org/SiteNavigationElement"> <txp:section_list wraptag="ul" break="" class="list-bare">
