@@ -15,7 +15,7 @@
 
     <txp:output_form form="body_header" />
 
-        <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/Blog">
+        <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/CreativeWork">
 
             <txp:if_search>
                 <!-- search results -->
