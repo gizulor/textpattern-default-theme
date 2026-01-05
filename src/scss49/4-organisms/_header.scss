@@ -38,6 +38,15 @@
   }
 }
 
+.site-name {
+  font-size:var(--h1);
+  line-height: 1;
+  margin-block-end: .5cap;
+  font-weight: var(--heading-weight);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  color: var(--clr-heading);
+}
 .site-navigation {
   >ul {
     display: flex;
