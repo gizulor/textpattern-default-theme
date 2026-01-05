@@ -3,9 +3,9 @@
      attributes of wraptag="" and break="", you are instead using ol and li tags below)... -->
     <hr />
     <section id="comments-head">
-        <h4>
+        <h3>
             <txp:text item="comments" />
-        </h4>
+        </h3>
         <ol class="comments-list">
             <!-- links by default to form: 'comments.comment.txp' unless you specify a different form -->
             <txp:comments wraptag="" break="li" />
@@ -24,9 +24,9 @@
         <!-- else if there are no comments yet and user is currently previewing comment, display it (but only if there is no error) -->
         <txp:if_comments_preview>
             <section id="comments-head">
-                <h4>
+                <h3>
                     <txp:text item="comments" />
-                </h4>
+                </h3>
                 <ol class="comments-list">
                     <li>
                         <p id="cpreview">
@@ -40,9 +40,9 @@
             <!-- else just display that there are simply no comments whatsoever :( ...but only if comments are allowed -->
             <txp:if_comments_allowed>
                 <section id="comments-head">
-                    <h4>
+                    <h3>
                         <txp:text item="comments" />
-                    </h4>
+                    </h3>
                     <p>
                         <txp:text item="no_comments" />
                     </p>
@@ -53,9 +53,9 @@
     <!-- next, if new comments are allowed for this article then display comment form -->
     <div id="comments-form">
         <!-- comment invite text is taken for the article's comment invitation field on the 'write' screen -->
-        <h4>
+        <h3>
             <txp:comments_invite showcount="0" textonly showalways />
-        </h4>
+        </h3>
         <!-- links by default to form: 'comment_form.comment.txp' unless you specify a different form -->
         <txp:comments_form />
     </div>

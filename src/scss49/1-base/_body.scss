@@ -4,7 +4,7 @@ body {
   min-height: 100vh;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: var(--sans);
+  font-family: var(--font-body);
   font-weight: var(--font-normal);
   line-height: var(--base-line-height);
 
@@ -18,7 +18,9 @@ body {
   color: var(--clr-text);
   background-color: var(--clr-bg);
 
-  > * {
+  main,
+  > aside,
+  > footer {
     padding: var(--gap);
     /* limit content width (omit for full-width) */
     max-width: breakpoints.$desktop;

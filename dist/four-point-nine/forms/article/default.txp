@@ -1,16 +1,17 @@
-<article class="article" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article class="article" itemprop="Article" itemscope itemtype="https://schema.org/Article">
     <meta itemprop="mainEntityOfPage" content="<txp:permlink />">
     <header class="article__header">
-        <div  class="container">
-            <h1 itemprop="headline">
+        <div>
+            <h1 itemprop="headline" class="h2-style">
                 <txp:if_individual_article>
                     <txp:title />
                 <txp:else />
                     <a href="<txp:permlink />" itemprop="url" title="<txp:text item=" read_more" />"><txp:title /></a>
                 </txp:if_individual_article>
             </h1>
+
             <div itemprop="description">
-                <txp:excerpt escape="tags" wraptsg="h5" />
+                <txp:excerpt escape="tags" wraptag="h2" class="h5-style" />
             </div>
         </div>
        <dl>
@@ -59,12 +60,17 @@
 
 
     <txp:if_article_image>
-        <txp:images form="images" />
+        <txp:images form="images" limit="1" />
     </txp:if_article_image>
 
     <div itemprop="articleBody">
         <txp:body />
     </div>
+    <txp:if_individual_article>
+    <txp:if_article_image>
+        <txp:images form="images" offset="1" limit="10" wraptag="div" class="auto-grid"/>
+    </txp:if_article_image>
+    </txp:if_individual_article>
 
 
     <!-- if this is an individual article then add the comments section via form: comments_display.article.txp -->

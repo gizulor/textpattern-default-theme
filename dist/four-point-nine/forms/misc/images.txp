@@ -7,10 +7,10 @@
         width="<txp:image_info type="w" />"
         height="<txp:image_info type="h" />"
         loading="lazy"
-        alt="<txp:image_info type='alt' default='<txp:image_info type='name' />' />"
+        alt="<txp:image_info type='alt' default='<txp:image_info type='name' trim='<txp:image_info type="ext" />' />' />"
     />
     <txp:evaluate>
-        <figcaption itemprop="caption">
+        <figcaption itemprop="caption" class="small">
             <!-- image_info without a type attribute outputs the caption -->
             <txp:image_info escape="textile"/>
         </figcaption>
