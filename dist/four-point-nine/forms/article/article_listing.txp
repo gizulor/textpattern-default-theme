@@ -1,10 +1,10 @@
-<li class="article__thumb" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<li class="article-thumb" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
     <a href="<txp:permlink />" itemprop="url mainEntityOfPage" title="<txp:text item=" read_more" />">
         <h3 itemprop="headline">
             <txp:title />
         </h3>
         <txp:if_article_image>
-            <txp:images form="images" limit="1" />
+            <txp:images form="images" limit="1" wraptag="div" class="article-thumb__image" />
         </txp:if_article_image>
     </a>
     <txp:if_excerpt>

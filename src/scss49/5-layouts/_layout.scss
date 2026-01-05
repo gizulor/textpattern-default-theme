@@ -19,7 +19,7 @@
   &__list {
     padding-inline-start: 0;
   }
-  &__thumb {
+  &-thumb {
     display: grid;
     grid-template-rows: subgrid;
     gap: var(--gap--s);
@@ -29,7 +29,9 @@
       display: contents;
     }
 
-    .footnote {}
+    &__image figcaption {
+      display: none;
+    }
   }
 
   &__header {

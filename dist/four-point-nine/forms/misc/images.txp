@@ -1,19 +1,18 @@
 <figure>
-    <img loading="lazy" alt="<txp:image_info type='alt' default='<txp:image_info type='name' />' />"
-        srcset="<txp:image_url thumbnail width="320" /> 320w,
+    <img srcset="<txp:image_url thumbnail width="320" /> 320w,
             <txp:image_url thumbnail width="640" /> 640w,
             <txp:image_url thumbnail width="1280" /> 1280w,
             <txp:image_url thumbnail width="2560" /> 2560w"
+        sizes="auto"
         width="<txp:image_info type="w" />"
         height="<txp:image_info type="h" />"
-        sizes="auto"
+        loading="lazy"
+        alt="<txp:image_info type='alt' default='<txp:image_info type='name' />' />"
     />
-    <txp:if_individual_article>
-        <txp:evaluate>
+    <txp:evaluate>
+        <figcaption itemprop="caption">
             <!-- image_info without a type attribute outputs the caption -->
-            <figcaption itemprop="caption">
-                <txp:image_info escape="textile"/>
-            </figcaption>
-        </txp:evaluate>
-    </txp:if_individual_article>
+            <txp:image_info escape="textile"/>
+        </figcaption>
+    </txp:evaluate>
 </figure>
