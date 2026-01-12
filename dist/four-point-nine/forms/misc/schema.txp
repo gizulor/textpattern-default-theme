@@ -2,7 +2,7 @@
     {
         "@context": "https://schema.org",
         "@type": "<txp:yield name="type" />",
-        "headline": "<txp:site_name escape="json" />",
+        "headline": "<txp:yield name="headline" />",
         <txp:if_description>"description": "<txp:meta_description format="" escape="json" />",</txp:if_description>
         "url": "<txp:yield name="url" />"
     }

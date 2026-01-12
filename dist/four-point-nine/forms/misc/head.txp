@@ -5,29 +5,17 @@
 
     <!-- CSS -->
 <txp:hide>
-    <!-- Temp: during development -->
+    <!-- Temp: Use file system for development -->
     <txp:css format="link" media="" />
 </txp:hide>
+
     <!-- or use external CSS files so you can open them in your preferred editor -->
-    <link rel="stylesheet" href="<txp:page_url type="theme_path" />/styles/default.css">
+    <!-- Temp: css variable testing -->
+    <link rel="stylesheet" href="/textpattern-default-theme/dist/four-point-nine/styles/<txp:evaluate><txp:page_url type="style" /><txp:else />style-wireframe.css</txp:evaluate>">
+    <link rel="stylesheet" href="/textpattern-default-theme/dist/four-point-nine/styles/default.css">
+    <!-- <link rel="stylesheet" href="<txp:page_url type="theme_path" />/styles/default.css"> -->
 
     <meta name="generator" content="Textpattern CMS">
-<txp:hide>
-    <!-- Temp: for reference -->
-    <txp:if_article_list type="author, c, month, pg, q">
-        <!-- not section frontpage -->
-
-        <!-- shift appends pg parameter to all page links, even the first one -->
-        <txp:newer shift /> - <txp:older />
-    <txp:else />
-        <txp:article pgonly /> <!-- set up pagination -->
-
-        <!-- shift="0" outputs the current page link with pg parameter appended -->
-        <txp:older shift="0" />
-    </txp:if_article_list>
-</txp:hide>
-
-
 
     <txp:if_search>
         <meta name="robots" content="none">
@@ -36,10 +24,6 @@
             <meta name="robots" content="noindex, follow">
         <txp:else />
             <txp:meta_description />
-
-
-
-
 
             <txp:variable name="page" value='<txp:page_url type="pg" />' />
 
@@ -52,7 +36,7 @@
                     <!-- default / homepage-->
                       <meta name="robots" content="index, follow">
                       <link rel="canonical" href="<txp:site_url />">
-                      <txp::schema type="WebPage" url='<txp:site_url escape="json" />'/>
+                      <txp::schema type="WebPage" url='<txp:site_url escape="json" />' headline='<txp:site_name escape="json" />' />
                   <txp:else />
                       <meta name="robots" content="noindex, follow">
                   </txp:if_variable>
@@ -65,7 +49,7 @@
                   <txp:if_variable name="page" value="1">
                       <meta name="robots" content="index, follow">
                       <link rel="canonical" href="<txp:section url />">
-                      <txp::schema type="WebPage" url='<txp:section url escape="json" />'/>
+                      <txp::schema type="WebPage" url='<txp:section url escape="json" />' headline='<txp:section title escape="json" />' />
                   <txp:else />
                       <meta name="robots" content="noindex, follow">
                   </txp:if_variable>
@@ -74,7 +58,7 @@
                   <txp:meta_author title />
                   <meta name="robots" content="<txp:if_expires>unavailable_after: <txp:expires gmt format="%d-%b-%y %T" /> GMT<txp:else />index, follow</txp:if_expires>">
                   <link rel="canonical" href="<txp:permlink />">
-                  <txp::schema type="WebPage" url='<txp:permlink escape="json" />'/>
+                  <txp::schema type="WebPage" url='<txp:permlink escape="json" />' headline='<txp:title escape="json" />' />
 
                   <meta property="og:site_name" content="<txp:site_name />">
                   <meta property="og:type" content="article">
