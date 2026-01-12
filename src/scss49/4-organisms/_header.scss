@@ -3,13 +3,15 @@
 .header {
   border-bottom: var(--border-width) solid var(--clr-border);
   background-color: var(--clr-bg--header);
+  font-size: var(--header-size);
+  font-weight: var(--weight-header);
 
   &__container {
     display: grid;
     gap: 0 var(--gap);
     padding: var(--gap--s) var(--gap);
     /* limit content width (omit for full-width) */
-    max-width: breakpoints.$desktop;
+    max-width: var(--content-limit);
     margin-inline: auto;
     grid-template-columns: auto 1fr;
 
@@ -22,6 +24,11 @@
       flex-direction: column;
       justify-content: center;
     }
+
+    >p {
+      font-size: 1rem;
+      font-weight: var(--weight-normal);
+    }
   }
 
   [rel="home"] {
@@ -33,7 +40,6 @@
 
     @media (max-width: breakpoints.$small) {
       grid-column: span 2;
-      ;
     }
   }
 
@@ -44,15 +50,6 @@
   }
 }
 
-// .site-name {
-// font-size:var(--h1);
-// line-height: 1;
-// margin-block-end: .5cap;
-// font-weight: var(--heading-weight);
-// text-wrap: balance;
-// overflow-wrap: break-word;
-// color: var(--clr-heading);
-// }
 .site-navigation {
   >ul {
     display: flex;
@@ -64,14 +61,17 @@
 
   li {
     margin-block-end: 0;
-    font-size: larger;
 
     &.active {
-      font-weight: var(--font-heavy);
+      font-weight: var(--weight-heavy);
     }
 
     a {
       text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

@@ -2,7 +2,7 @@
 <header class="header">
     <div class="header__container">
         <div>
-            <txp:link_to_home class="h1-style"><txp:site_name /></txp:link_to_home>
+            <txp:link_to_home><txp:site_name /></txp:link_to_home>
         </div>
         <nav id="navigation" class="site-navigation" aria-label="<txp:text item=" site_nav" />" itemscope itemtype="https://schema.org/SiteNavigationElement"> <txp:section_list wraptag="ul" break="" class="list-bare">
                 <li<txp:if_section name='<txp:section />'> class="active"</txp:if_section>>
