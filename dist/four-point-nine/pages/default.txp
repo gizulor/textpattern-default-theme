@@ -29,11 +29,11 @@
                     <!-- listing page -->
                     <txp:if_author>
                         <!-- page author heading  -->
-                        <h1 itemprop="name"><txp:text item="author" /> <txp:author /></h1>
+                        <h1 itemprop="name"><txp:text item="author" />: <txp:author /></h1>
                     <txp:else />
                         <txp:if_category>
                             <!-- page category heading -->
-                            <h1 itemprop="name"><txp:text item="category" /> <txp:category title /></h1>
+                            <h1 itemprop="name"><txp:text item="category" />: <txp:category title /></h1>
                         </txp:if_category>
                     </txp:if_author>
                     <!-- default limit is 10 articles -->
