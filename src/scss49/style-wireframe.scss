@@ -1,3 +1,4 @@
+@use "0-settings/breakpoints";
 :root {
    /* Variable font-sizing to suit viewport size */
    --min-fs: .8125; /* min size in rems */
@@ -9,23 +10,29 @@
    --sans: system-ui, sans-serif;
    --serif: 'PT Serif', Baskerville, serif;
    --mono: ui-monospace, monospace;
+   --font-heading: var(--sans);
    --font-body: var(--sans);
-   --font-heading: var(--serif);
-   --font-normal: 300;
-   --font-heavy: 500;
-   --heading-weight: var(--font-heavy);
+   --weight-normal: 300;
+   --weight-heavy: 500;
+   --weight-heading: var(--weight-heavy);
+   --weight-header: var(--weight-heavy);
+   --font-stretch: normal;
    --base-line-height: 1.5;
    --type-measure: 96ch;
    /* Heading sizes (Major Third type scale) */
-   --h1: 3.052rem;
-   --h2: 2.441rem;
-   --h3: 1.953rem;
-   --h4: 1.563rem;
-   --h5: 1.25rem;
-   --h6: 1rem;
+   --h1: 3.052em;
+   --h2: 2.441em;
+   --h3: 1.953em;
+   --h4: 1.563em;
+   --h5: 1.25em;
+   --h6: 1em;
+
+   /* Common Header */
+   --header-size: var(--h4);
 
    /* UI spacing */
-   --gap: 1lh;
+   --content-limit: 1280px;
+   --gap: 1.5em;
    --gap--s: calc(var(--gap) / 2);
    --gap--ss: calc(var(--gap) / 4);
    --gap--b: calc(var(--gap) * 2);
@@ -44,6 +51,6 @@
    }
 
    @media(max-width: breakpoints.$small) {
-      --gap: .5lh;
+      --gap: .75em
    }
 }

@@ -2,8 +2,9 @@
 /*
 Use css variables to control broad styling
 **********************************************************/
+// @use "0-settings/config"; // wireframe
 
-@use "0-settings/config";
+//@use "0-settings/config-a"; // style 1
 
 /*
 Customise the colour palette
@@ -18,11 +19,13 @@ Base styling
 @use "1-base/normalise";
 @use "1-base/body";
 @use "1-base/tables";
+
+/* Classed elements start here */
 @use "1-base/typeset";
 @use "2-atoms/list-bare";
 
 /*
-Component layout
+Components & layout
 **********************************************************/
 
 @use "4-organisms/header";

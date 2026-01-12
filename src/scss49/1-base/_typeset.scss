@@ -1,8 +1,6 @@
 @use "../0-settings/breakpoints";
 
-//@use "../2-atoms/heading";
-
-// Consistent baselines assuming 1.5rem baseline
+/* Use h{n}-style variants in the markup to control sizes */
 h1,
 .h1-style,
 h2,
@@ -17,7 +15,7 @@ h5,
   margin-block-end: .5cap;
   text-wrap: balance;
   overflow-wrap: break-word;
-  font-weight: var(--heading-weight);
+  font-weight: var(--weight-heading);
   font-family: var(--font-heading);
   color: var(--clr-heading);
 }
@@ -30,31 +28,32 @@ h1,
 h2,
 .h2-style {
   font-size: var(--h2);
-  margin-block-start: 1cap;
+  //margin-block-start: 1cap;
 }
 
 h3,
 .h3-style {
   font-size: var(--h3);
-  margin-block-start: 1cap;
+  //margin-block-start: 1cap;
 }
 
 h4,
 .h4-style {
   font-size: var(--h4);
-  margin-block-start: 1cap;
+  //margin-block-start: 1cap;
 }
 
 h5,
 .h5-style {
-  margin-top: .5cap;
+  //margin-top: .5cap;
   font-size: var(--h5);
 }
 
-h6 {
-  margin-block-start: 1cap;
+h6,
+.h6-style  {
+  //margin-block-start: 1cap;
   font-size: var(--h6);
-  font-weight: var(--font-heavy);
+  font-weight: var(--weight-heavy);
 }
 
 a {
@@ -90,7 +89,7 @@ figcaption {
 dt,
 strong,
 th {
-  font-weight: var(--font-heavy);
+  font-weight: var(--weight-heavy);
 }
 
 ul,
@@ -119,8 +118,7 @@ li {
 }
 
 dl {
- // margin-inline-start: var(--gap);
- overflow: auto;
+ overflow: auto; // allow for floated elements
 }
 
 dt,

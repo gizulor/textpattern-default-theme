@@ -5,7 +5,7 @@ body {
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-family: var(--font-body);
-  font-weight: var(--font-normal);
+  font-weight: var(--weight-normal);
   line-height: var(--base-line-height);
 
   /* Variable font-scaling */
@@ -14,7 +14,7 @@ body {
   --min-vw-rem: var(--min-vw) * 1rem;
   --slope: (var(--max-fs) - var(--min-fs)) * (100vw - var(--min-vw-rem)) / (var(--max-vw) - var(--min-vw));
   font-size: clamp(var(--min-fs-rem), var(--min-fs-rem) + var(--slope), var(--max-fs-rem));
-
+  font-stretch: var(--font-stretch);
   color: var(--clr-text);
   background-color: var(--clr-bg);
 
@@ -22,8 +22,7 @@ body {
   > aside,
   > footer {
     padding: var(--gap);
-    /* limit content width (omit for full-width) */
-    max-width: breakpoints.$desktop;
+    max-width: var(--content-limit);
     margin-inline: auto;
   }
 }

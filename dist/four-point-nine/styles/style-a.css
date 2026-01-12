@@ -1,0 +1,50 @@
+:root {
+  /* Variable font-sizing to suit viewport size */
+  --min-fs: 1; /* min size in rems */
+  --max-fs: 1; /* max size in rems */
+  --min-vw: 20; /* min viewport width in rems */
+  --max-vw: 160; /* max viewport width in rems */
+  /* Type */
+  --sans: system-ui, sans-serif;
+  --serif: "PT Serif", Baskerville, serif;
+  --mono: ui-monospace, monospace;
+  --font-heading: var(--sans);
+  --font-body: var(--sans);
+  --weight-normal: 300;
+  --weight-heavy: 500;
+  --weight-heading: var(--weight-heavy);
+  --weight-header: var(--weight-heavy);
+  --base-line-height: 1.5;
+  --type-measure: 96ch;
+  /* Heading sizes (Major Third type scale) */
+  --h1: 6vw;
+  --h2: var(--h1);
+  --h3: 2vw;
+  --h4: var(--h3);
+  --h5: var(--h3);
+  --h6: 1rem;
+  --header-size: var(--h3);
+  /* UI spacing */
+  --content-limit: 80%;
+  --gap: 1.5rem;
+  --gap--s: calc(var(--gap) / 2);
+  --gap--ss: calc(var(--gap) / 4);
+  --gap--b: calc(var(--gap) * 2);
+  --border-width: .35em;
+  /* Colour assignments */
+  --clr-text: var(--bone);
+  --clr-heading: var(--clr-text);
+  --clr-bg: var(--grey-800);
+  --clr-bg--header: var(--clr-bg);
+  --clr-link: var(--clr-text);
+  --clr-border: var(--clr-text);
+}
+:root ::selection {
+  background-color: var(--clr-text);
+  color: var(--clr-bg);
+}
+@media (max-width: 720px) {
+  :root {
+    --gap: .75rem ;
+  }
+}

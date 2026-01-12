@@ -1,0 +1,53 @@
+@use "0-settings/breakpoints";
+:root {
+   /* Variable font-sizing to suit viewport size */
+   --min-fs: .8125; /* min size in rems */
+   --max-fs: 1;     /* max size in rems */
+   --min-vw: 20;    /* min viewport width in rems */
+   --max-vw: 108;   /* max viewport width in rems */
+
+   /* Type */
+   --sans: system-ui, sans-serif;
+   --serif: 'PT Serif', Baskerville, serif;
+   --mono: ui-monospace, monospace;
+   --font-heading: var(--serif);
+   --font-body: var(--serif);
+   --weight-normal: 300;
+   --weight-heavy: 500;
+   --weight-heading: var(--weight-heavy);
+   --weight-header: var(--weight-heavy);
+   --base-line-height: 1.65;
+   --type-measure: 96ch;
+   /* Heading sizes (Minor Second type scale) */
+   --h1: 1.383rem;
+   --h2: 1.296rem;
+   --h3: 1.215rem;
+   --h4: 1.138rem;
+   --h5: 1.067rem;
+   --h6: 1rem;
+   --header-size: 1rem;
+
+   /* UI spacing */
+   --content-limit: 960px;
+   --gap: 1.5rem;
+   --gap--s: calc(var(--gap) / 2);
+   --gap--ss: calc(var(--gap) / 4);
+   --gap--b: calc(var(--gap) * 2);
+   --border-width: 1px;
+
+   /* Colour assignments */
+   --clr-text: var(--black);
+   --clr-heading: var(--clr-text);
+   --clr-bg: var(--white);
+   --clr-bg--header: var(--white);
+   --clr-link:  var(--clr-text);
+   --clr-border: var(--clr-text);
+   ::selection {
+     background-color: var(--clr-text);
+     color: var(--clr-bg);
+   }
+
+   @media(max-width: breakpoints.$small) {
+      --gap: .75rem
+   }
+}

@@ -25,7 +25,8 @@
       justify-content: center;
     }
 
-    >p {
+    >p,
+    search {
       font-size: 1rem;
       font-weight: var(--weight-normal);
     }
