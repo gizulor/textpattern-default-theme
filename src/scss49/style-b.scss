@@ -8,7 +8,7 @@
 
    /* Type */
    --sans: system-ui, sans-serif;
-   --serif: 'PT Serif', Baskerville, serif;
+   --serif: 'Palatino', 'Lucida Bright', 'PT Serif', Baskerville, serif;
    --mono: ui-monospace, monospace;
    --font-heading: var(--serif);
    --font-body: var(--serif);
@@ -25,7 +25,10 @@
    --h4: 1.138rem;
    --h5: 1.067rem;
    --h6: 1rem;
-   --header-size: 1rem;
+
+
+   /* Common Header */
+   --header-size: var(--h1);
 
    /* UI spacing */
    --content-limit: 960px;
@@ -33,13 +36,23 @@
    --gap--s: calc(var(--gap) / 2);
    --gap--ss: calc(var(--gap) / 4);
    --gap--b: calc(var(--gap) * 2);
-   --border-width: 1px;
+   --border-width: .5px;
 
    /* Colour assignments */
-   --clr-text: var(--black);
+   --clr-text: var(--blue-900);
    --clr-heading: var(--clr-text);
-   --clr-bg: var(--white);
-   --clr-bg--header: var(--white);
+   //--clr-bg: oklch(from var(--blue-100) 90% .015 h);
+   --clr-bg: linear-gradient(to left, var(--blue-300), var(--blue-100));
+  --clr-bg: repeating-linear-gradient(90deg, rgba(21,120,239, 0.06) 0px, rgba(21,120,239, 0.06) 1px,transparent 1px, transparent var(--gap--b)),
+  repeating-linear-gradient(150deg, rgba(21,120,239, 0.06) 0px, rgba(21,120,239, 0.06) 1px,transparent 1px, transparent var(--gap)),
+  var(--white);
+
+//
+  // radial-gradient(circle at 15% 15%, hsla(190,0%,93%,0.05) 0%, hsla(190,0%,93%,0.05) 96%,transparent 96%, transparent 100%),
+  // radial-gradient(circle at 14% 15%, hsla(190,0%,93%,0.05) 0%, hsla(190,0%,93%,0.05) 1%,transparent 1%, transparent 100%),
+  // radial-gradient(circle at 60% 90%, hsla(190,0%,93%,0.05) 0%, hsla(190,0%,93%,0.05) 20%,transparent 20%, transparent 100%),radial-gradient(circle at 79% 7%, hsla(190,0%,93%,0.05) 0%, hsla(190,0%,93%,0.05) 78%,transparent 78%, transparent 100%),radial-gradient(circle at 55% 65%, hsla(190,0%,93%,0.05) 0%, hsla(190,0%,93%,0.05) 52%,transparent 52%, transparent 100%),linear-gradient(135deg, var(--blue-100),var(--blue-700));
+
+   --clr-bg--header: hsla(0, 0%, 100%, 0.825);
    --clr-link:  var(--clr-text);
    --clr-border: var(--clr-text);
    ::selection {

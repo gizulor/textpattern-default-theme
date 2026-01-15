@@ -16,7 +16,7 @@ body {
   font-size: clamp(var(--min-fs-rem), var(--min-fs-rem) + var(--slope), var(--max-fs-rem));
   font-stretch: var(--font-stretch);
   color: var(--clr-text);
-  background-color: var(--clr-bg);
+  background: var(--clr-bg);
 
   main,
   > aside,

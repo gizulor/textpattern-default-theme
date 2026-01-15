@@ -11,7 +11,7 @@ h4,
 .h4-style,
 h5,
 .h5-style {
-  line-height: 1.25;
+  line-height: 1;
   margin-block-end: .5cap;
   text-wrap: balance;
   overflow-wrap: break-word;
@@ -22,7 +22,8 @@ h5,
 
 h1,
 .h1-style {
-  font-size: var(--h1);
+ margin-block-start: .5cap;
+ font-size: var(--h1);
 }
 
 h2,

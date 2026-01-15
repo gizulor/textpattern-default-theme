@@ -10,7 +10,7 @@
    --sans: system-ui, sans-serif;
    --serif: 'PT Serif', Baskerville, serif;
    --mono: ui-monospace, monospace;
-   --font-heading: var(--sans);
+   --font-heading: Rockwell, var(--sans);
    --font-body: var(--sans);
    --weight-normal: 300;
    --weight-heavy: 500;
@@ -25,6 +25,9 @@
    --h4: var(--h3);
    --h5: var(--h3);
    --h6: 1rem;
+
+
+   /* Common Header */
    --header-size: var(--h3);
 
    /* UI spacing */
@@ -33,7 +36,7 @@
    --gap--s: calc(var(--gap) / 2);
    --gap--ss: calc(var(--gap) / 4);
    --gap--b: calc(var(--gap) * 2);
-   --border-width: .35em;
+   --border-width: 3px;
 
    /* Colour assignments */
    --clr-text: var(--bone);

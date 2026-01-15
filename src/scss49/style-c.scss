@@ -1,10 +1,10 @@
 @use "0-settings/breakpoints";
 :root {
    /* Variable font-sizing to suit viewport size */
-   --min-fs: .8125; /* min size in rems */
+   --min-fs: 1; /* min size in rems */
    --max-fs: 1;     /* max size in rems */
    --min-vw: 20;    /* min viewport width in rems */
-   --max-vw: 108;   /* max viewport width in rems */
+   --max-vw: 160;   /* max viewport width in rems */
 
    /* Type */
    --sans: system-ui, sans-serif;
@@ -16,33 +16,33 @@
    --weight-heavy: 500;
    --weight-heading: var(--weight-heavy);
    --weight-header: var(--weight-heavy);
-   --font-stretch: normal;
    --base-line-height: 1.5;
    --type-measure: 96ch;
    /* Heading sizes (Major Third type scale) */
-   --h1: 3.052rem;
-   --h2: 2.441rem;
-   --h3: 1.953rem;
-   --h4: 1.563rem;
-   --h5: 1.25rem;
+   --h1: 6vw;
+   --h2: var(--h1);
+   --h3: var(--h1);
+   --h4: var(--h1);
+   --h5: var(--h1);
    --h6: 1rem;
 
+
    /* Common Header */
-   --header-size: var(--h4);
+   --header-size: var(--h1);
 
    /* UI spacing */
-   --content-limit: 1280px;
-   --gap: 1.5rem;
+   --content-limit: 80%;
+   --gap: 2vw;
    --gap--s: calc(var(--gap) / 2);
    --gap--ss: calc(var(--gap) / 4);
    --gap--b: calc(var(--gap) * 2);
-   --border-width: 2px;
+   --border-width: .5vw;
 
    /* Colour assignments */
    --clr-text: var(--black);
    --clr-heading: var(--clr-text);
    --clr-bg: var(--white);
-   --clr-bg--header: var(--white);
+   --clr-bg--header: var(--clr-bg);
    --clr-link:  var(--clr-text);
    --clr-border: var(--clr-text);
    ::selection {
