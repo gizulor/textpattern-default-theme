@@ -8,7 +8,7 @@
   --sans: system-ui, sans-serif;
   --serif: "PT Serif", Baskerville, serif;
   --mono: ui-monospace, monospace;
-  --font-heading: Rockwell, var(--sans);
+  --font-heading: var(--sans);
   --font-body: var(--sans);
   --weight-normal: 300;
   --weight-heavy: 500;

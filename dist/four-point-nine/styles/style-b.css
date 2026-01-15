@@ -6,7 +6,7 @@
   --max-vw: 108; /* max viewport width in rems */
   /* Type */
   --sans: system-ui, sans-serif;
-  --serif: "Palatino", "Lucida Bright", "PT Serif", Baskerville, serif;
+  --serif: "PT Serif", Baskerville, serif;
   --mono: ui-monospace, monospace;
   --font-heading: var(--serif);
   --font-body: var(--serif);
@@ -23,23 +23,21 @@
   --h4: 1.138rem;
   --h5: 1.067rem;
   --h6: 1rem;
+  --header-size: 1rem;
   /* Common Header */
-  --header-size: var(--h1);
+  --header-size: var(--h4);
   /* UI spacing */
   --content-limit: 960px;
   --gap: 1.5rem;
   --gap--s: calc(var(--gap) / 2);
   --gap--ss: calc(var(--gap) / 4);
   --gap--b: calc(var(--gap) * 2);
-  --border-width: .5px;
+  --border-width: 1px;
   /* Colour assignments */
-  --clr-text: var(--blue-900);
+  --clr-text: oklch(from var(--blue-900) 90% .015 h / .7);
   --clr-heading: var(--clr-text);
-  --clr-bg: linear-gradient(to left, var(--blue-300), var(--blue-100));
-  --clr-bg: repeating-linear-gradient(90deg, rgba(21,120,239, 0.06) 0px, rgba(21,120,239, 0.06) 1px,transparent 1px, transparent var(--gap--b)),
-  repeating-linear-gradient(150deg, rgba(21,120,239, 0.06) 0px, rgba(21,120,239, 0.06) 1px,transparent 1px, transparent var(--gap)),
-  var(--white);
-  --clr-bg--header: hsla(0, 0%, 100%, 0.825);
+  --clr-bg: oklch(from var(--blue-100) 90% .015 h);
+  --clr-bg--header: var(--clr-bg);
   --clr-link: var(--clr-text);
   --clr-border: var(--clr-text);
 }
