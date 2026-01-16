@@ -1,42 +1,42 @@
 :root {
   /* Variable font-sizing to suit viewport size */
-  --min-fs: .8125; /* min size in rems */
+  --min-fs: 1; /* min size in rems */
   --max-fs: 1; /* max size in rems */
   --min-vw: 20; /* min viewport width in rems */
-  --max-vw: 108; /* max viewport width in rems */
+  --max-vw: 160; /* max viewport width in rems */
   /* Type */
   --sans: system-ui, sans-serif;
-  --serif: "Palatino","PT Serif", Baskerville, serif;
+  --serif: "PT Serif", Baskerville, serif;
   --mono: ui-monospace, monospace;
-  --font-heading: var(--serif);
-  --font-body: var(--serif);
+  --font-heading: var(--sans);
+  --font-body: var(--sans);
   --weight-normal: 300;
   --weight-heavy: 500;
   --weight-heading: var(--weight-heavy);
   --weight-header: var(--weight-heavy);
-  --base-line-height: 1.65;
+  --base-line-height: 1.5;
   --type-measure: 96ch;
-  /* Heading sizes (Minor Second type scale) */
-  --h1: 1.383rem;
-  --h2: 1.296rem;
-  --h3: 1.215rem;
-  --h4: 1.138rem;
-  --h5: 1.067rem;
+  /* Heading sizes (Major Third type scale) */
+  --h1: 6vw;
+  --h2: var(--h1);
+  --h3: var(--h1);
+  --h4: var(--h1);
+  --h5: var(--h1);
   --h6: 1rem;
   /* Common Header */
   --header-size: var(--h1);
   /* UI spacing */
-  --content-limit: 960px;
-  --gap: 1.5rem;
+  --content-limit: 80%;
+  --gap: 2vw;
   --gap--s: calc(var(--gap) / 2);
   --gap--ss: calc(var(--gap) / 4);
   --gap--b: calc(var(--gap) * 2);
-  --border-width: .5px;
+  --border-width: .5vw;
   /* Colour assignments */
-  --clr-text: var(--blue-900);
+  --clr-text: var(--black);
   --clr-heading: var(--clr-text);
-  --clr-bg: repeating-linear-gradient(90deg, rgba(21,120,239, 0.06) 0px, rgba(21,120,239, 0.06) 1px,transparent 1px, transparent var(--gap--b)),repeating-linear-gradient(150deg, rgba(21,120,239, 0.06) 0px, rgba(21,120,239, 0.06) 1px,transparent 1px, transparent var(--gap)),var(--white);
-  --clr-bg--header: hsla(0, 0%, 100%, 0.825);
+  --clr-bg: var(--white);
+  --clr-bg--header: var(--clr-bg);
   --clr-link: var(--clr-text);
   --clr-border: var(--clr-text);
 }
