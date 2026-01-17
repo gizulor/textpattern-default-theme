@@ -1,16 +1,16 @@
-<li class="article__thumb" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<li class="article-thumb" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
     <a href="<txp:permlink />" itemprop="url mainEntityOfPage" title="<txp:text item=" read_more" />">
-        <h3 itemprop="headline">
+        <h2 itemprop="headline" class="h3-style">
             <txp:title />
-        </h3>
+        </h2>
         <txp:if_article_image>
-            <txp:images form="images" limit="1" />
+            <txp:images form="images" limit="1" wraptag="div" class="article-thumb__image" />
         </txp:if_article_image>
     </a>
     <txp:if_excerpt>
         <!-- if the article has an excerpt -->
         <div itemprop="description">
-            <txp:excerpt escape="tags" wraptag="h5" />
+            <txp:excerpt escape="tags" wraptag="h3" class="h5-style"/>
         </div>
     </txp:if_excerpt>
     <p class="footnote">

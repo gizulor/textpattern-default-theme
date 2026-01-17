@@ -1,0 +1,449 @@
+ <!DOCTYPE html>
+ <html lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
+
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+   <title>StyleLab</title>
+   <meta name="generator" content="Textpattern CMS">
+   <style>
+   @import url(/textpattern-default-theme/src/scss49/0-settings/_colours.scss);
+     body {
+       display: grid;
+       grid-template-columns: auto 1fr;
+       margin: 0;
+     }
+
+     .lab {
+       padding: .5rem;
+       background-color: #f3f3f3;
+       font-size: small;
+       font-family: system-ui, sans-serif;
+     }
+
+     section>p {
+       display: grid;
+       grid-template-columns: 1fr 1fr auto;
+       gap: .5rem;
+     }
+
+     p>span:last-child {
+       min-width: 3ch;
+     }
+
+     iframe {
+       width: 100%;
+       height: 100vh;
+       border: 0;
+     }
+
+     .palette {
+        display: none;
+        &.is-active {
+
+        }
+        grid-template-columns: repeat(auto-fill, 1rem);
+        width: 100%;
+         display: grid;
+    }
+
+     [data-colour] {
+        aspect-ratio: 1/1;
+        width: 1rem;
+     }
+   </style>
+ </head>
+
+ <body itemscope itemtype="https://schema.org/WebPage">
+   <main class="lab" aria-label="<txp:text item="main_content" />">
+   <section>
+     <details>
+       <summary><strong>Variable font-sizing</strong></summary>
+       <p>Scale the font size smoothly according to the window width; from small for mobile to large for desktops.</p>
+       <p> min-fs: min size in rems<br /> max-fs: max size in rems<br /> min-vw: min viewport width in rems<br /> max-vw: max viewport width in rems </p>
+     </details>
+     <p>
+        <label>--min-fs</label>
+        <input data-property="min-fs" data-unit="" type="number" min=".5" max="3" value=".8125" step=".125" /><span>rem</span>
+     </p>
+     <p>
+        <label>--max-fs</label>
+        <input data-property="max-fs" data-unit="" type="number" min=".5" max="3" value="1" step=".125" /><span>rem</span>
+     </p>
+     <p>
+        <label>--min-vw</label>
+        <input data-property="min-vw" data-unit="" type="number" min="10" max="40" value="20" step="1" /><span>rem</span>
+     </p>
+     <p>
+        <label>--max-vw</label>
+        <input data-property="max-vw" data-unit="" type="number" min="40" max="200" value="108" step="1" /><span>rem</span>
+     </p>
+     <p>
+        <label>--h1, .h1-style</label>
+        <input data-property="h1" data-unit="" type="text" value="3.052rem"  /><span></span>
+     </p>
+     <p>
+        <label>--h2, .h2-style</label>
+        <input data-property="h2" data-unit="" type="text" value="2.441rem"  /><span></span>
+     </p>
+     <p>
+        <label>--h3, .h3-style</label>
+        <input data-property="h3" data-unit="" type="text" value="1.953rem"  /><span></span>
+     </p>
+     <p>
+        <label>--h4, .h4-style</label>
+        <input data-property="h4" data-unit="" type="text" value="1.563rem"  /><span></span>
+     </p>
+     <p>
+        <label>--h5, .h5-style</label>
+        <input data-property="h5" data-unit="" type="text" value="1.25rem"  /><span></span>
+     </p>
+     <p>
+          <label>--h6, .h6-style</label>
+          <input data-property="h6" data-unit="" type="text" value="1rem"  /><span></span>
+       </p>
+     <p>
+            <label>--menu-size</label>
+            <input data-property="menu-size" data-unit="" type="text" value="var(--h4)"  /><span></span>
+         </p>
+   </section>
+   <section>
+     <p><strong>Typography</strong></p>
+     <p class="lab__text-input">
+       <label>--sans</label>
+       <input data-property="sans" data-unit="" type="text" value="system-ui, sans-serif" />
+       <span></span>
+     </p>
+     <p class="lab__text-input">
+       <label>--serif</label>
+       <input data-property="serif" data-unit="" type="text" value="'PT Serif', Baskerville, serif" />
+       <span></span>
+     </p>
+     <p class="lab__text-input">
+       <label>--font-heading</label>
+       <input data-property="font-heading" data-unit="" type="text" value="var(--sans)" />
+       <span></span>
+     </p>
+     <p class="lab__text-input">
+       <label>--font-body</label>
+       <input data-property="font-body" data-unit="" type="text" value="var(--sans)" />
+       <span></span>
+     </p>
+     <p>
+        <label>--weight-normal</label>
+        <select data-property="weight-normal">
+           <option>100</option>
+           <option>200</option>
+           <option selected>300</option>
+           <option>400</option>
+           <option>500</option>
+           <option>600</option>
+           <option>700</option>
+           <option>800</option>
+           <option>900</option>
+        </select>
+        <span></span>
+     </p>
+     <p>
+        <label>--weight-heavy</label>
+        <select data-property="weight-heavy">
+           <option>100</option>
+           <option>200</option>
+           <option>300</option>
+           <option>400</option>
+           <option selected>500</option>
+           <option>600</option>
+           <option>700</option>
+           <option>800</option>
+           <option>900</option>
+        </select>
+        <span></span>
+     </p>
+     <p>
+        <label>--weight-heading</label>
+        <select data-property="weight-heading">
+           <option>100</option>
+           <option>200</option>
+           <option>300</option>
+           <option>400</option>
+           <option selected>500</option>
+           <option>600</option>
+           <option>700</option>
+           <option>800</option>
+           <option>900</option>
+        </select>
+        <span></span>
+     </p>
+     <p>
+        <label>--weight-menu</label>
+        <select data-property="weight-menu">
+           <option>100</option>
+           <option>200</option>
+           <option>300</option>
+           <option>400</option>
+           <option selected>500</option>
+           <option>600</option>
+           <option>700</option>
+           <option>800</option>
+           <option>900</option>
+        </select>
+        <span></span>
+     </p>
+     <p>
+        <label>--base-line-height</label>
+        <input data-property="base-line-height" data-unit="" type="number" value="1.5" min="1" max="3" step=".125" />
+        <span></span>
+      </p>
+      <p>
+         <label>--type-measure</label>
+         <input data-property="type-measure" data-unit="ch" type="number" value="96" min="64" max="128" step="8" />
+         <span>ch</span>
+      </p>
+   </section>
+   <section>
+     <h4>UI defaults</h4>
+      <p>
+        <label>--content-limit</label>
+        <input data-property="content-limit" data-unit="" type="text" value="1280px" />
+        <span></span>
+     </p>
+      <p>
+        <label>--gap</label>
+        <input data-property="gap" data-unit="" type="text" value="1.5rem" />
+        <span></span>
+     </p>
+      <p>
+         <label>--border-width</label>
+         <input data-property="border-width" data-unit="px" type="number" value="2" min=".25" max="24" step=".25" />
+         <span>px</span>
+      </p>
+   </section>
+
+   <section>
+     <h4>UI colour</h4>
+
+     <p  >
+       <label>--clr-text</label>
+          <input id="text" class="has-palette" data-property="clr-text" data-unit="" type="text" value="hsla(0, 0%, 12%, 1)" />
+       <input data-property="clr-text"  type="color" value="hsla(0, 0%, 12%, 1)" colorspace="limited-srgb" alpha/>
+ <span></span>
+    </p>
+     <p>
+       <label>--clr-bg</label>
+          <input class="has-palette" data-property="clr-bg" data-unit="" type="text" value="white" />
+       <input data-property="clr-bg"  type="color" value="hsla(0, 0%, 100%,1)" colorspace="limited-srgb" alpha/>
+ <span></span>
+    </p>
+     <p>
+         <label>--clr-bg--header</label>
+          <input class="has-palette" data-property="clr-bg--header" data-unit="" type="text" value="var(--clr-bg)" />
+
+         <input data-property="clr-bg--header"  type="color" value="hsla(0, 0%, 100%,1)" colorspace="limited-srgb" alpha/>
+ <span></span>
+       </p>
+     <p>
+         <label>--clr-border</label>
+  <input class="has-palette" data-property="clr-border" data-unit="" type="text" value="var(--clr-text)" />
+       <input data-property="clr-border"  type="color" value="hsla(0, 0%, 12%, 1)" colorspace="limited-srgb" alpha/>
+ <span></span>
+     </p>
+
+
+   </section>
+
+   <!-- <div class="palette">
+
+   <span draggable="true" style="background-color: var(--white)" data-colour="--white"></span>
+
+    <span draggable="true" style="background-color: var(--black)" data-colour="--black"></span>
+
+
+    <span draggable="true" style="background-color: var(--corbu-white)" data-colour="--corbu-white"></span>
+
+
+    <span draggable="true" style="background-color: var(--grey-100)" data-colour="--grey-100"></span>
+
+    <span draggable="true" style="background-color: var(--grey-200)" data-colour="--grey-200"></span>
+
+    <span draggable="true" style="background-color: var(--grey-300)" data-colour="--grey-300"></span>
+
+    <span draggable="true" style="background-color: var(--grey-400)" data-colour="--grey-400"></span>
+
+    <span draggable="true" style="background-color: var(--grey-500)" data-colour="--grey-500"></span>
+
+    <span draggable="true" style="background-color: var(--grey-600)" data-colour="--grey-600"></span>
+
+    <span draggable="true" style="background-color: var(--grey-700)" data-colour="--grey-700"></span>
+
+    <span draggable="true" style="background-color: var(--grey-800)" data-colour="--grey-800"></span>
+
+    <span draggable="true" style="background-color: var(--grey-900)" data-colour="--grey-900"></span>
+
+
+    <span draggable="true" style="background-color: var(--blue-100)" data-colour="--blue-100"></span>
+
+    <span draggable="true" style="background-color: var(--blue-200)" data-colour="--blue-200"></span>
+
+    <span draggable="true" style="background-color: var(--blue-300)" data-colour="--blue-300"></span>
+
+    <span draggable="true" style="background-color: var(--blue-400)" data-colour="--blue-400"></span>
+
+    <span draggable="true" style="background-color: var(--blue-500)" data-colour="--blue-500"></span>
+
+    <span draggable="true" style="background-color: var(--blue-600)" data-colour="--blue-600"></span>
+
+    <span draggable="true" style="background-color: var(--blue-700)" data-colour="--blue-700"></span>
+
+    <span draggable="true" style="background-color: var(--blue-800)" data-colour="--blue-800"></span>
+
+    <span draggable="true" style="background-color: var(--blue-900)" data-colour="--blue-900"></span>
+
+
+    <span draggable="true" style="background-color: var(--green-100)" data-colour="--green-100"></span>
+
+    <span draggable="true" style="background-color: var(--green-200)" data-colour="--green-200"></span>
+
+    <span draggable="true" style="background-color: var(--green-300)" data-colour="--green-300"></span>
+
+    <span draggable="true" style="background-color: var(--green-400)" data-colour="--green-400"></span>
+
+    <span draggable="true" style="background-color: var(--green-500)" data-colour="--green-500"></span>
+
+    <span draggable="true" style="background-color: var(--green-600)" data-colour="--green-600"></span>
+
+    <span draggable="true" style="background-color: var(--green-700)" data-colour="--green-700"></span>
+
+    <span draggable="true" style="background-color: var(--green-800)" data-colour="--green-800"></span>
+
+    <span draggable="true" style="background-color: var(--green-900)" data-colour="--green-900"></span>
+
+
+    <span draggable="true" style="background-color: var(--red-100)" data-colour="--red-100"></span>
+
+    <span draggable="true" style="background-color: var(--red-200)" data-colour="--red-200"></span>
+
+    <span draggable="true" style="background-color: var(--red-300)" data-colour="--red-300"></span>
+
+    <span draggable="true" style="background-color: var(--red-400)" data-colour="--red-400"></span>
+
+    <span draggable="true" style="background-color: var(--red-500)" data-colour="--red-500"></span>
+
+    <span draggable="true" style="background-color: var(--red-600)" data-colour="--red-600"></span>
+
+    <span draggable="true" style="background-color: var(--red-700)" data-colour="--red-700"></span>
+
+    <span draggable="true" style="background-color: var(--red-800)" data-colour="--red-800"></span>
+
+
+    <span draggable="true" style="background-color: var(--brown-100)" data-colour="--brown-100"></span>
+
+    <span draggable="true" style="background-color: var(--brown-200)" data-colour="--brown-200"></span>
+
+    <span draggable="true" style="background-color: var(--brown-300)" data-colour="--brown-300"></span>
+
+    <span draggable="true" style="background-color: var(--brown-400)" data-colour="--brown-400"></span>
+
+    <span draggable="true" style="background-color: var(--brown-500)" data-colour="--brown-500"></span>
+
+    <span draggable="true" style="background-color: var(--brown-600)" data-colour="--brown-600"></span>
+
+    <span draggable="true" style="background-color: var(--brown-700)" data-colour="--brown-700"></span>
+
+    <span draggable="true" style="background-color: var(--brown-800)" data-colour="--brown-800"></span>
+
+    <span draggable="true" style="background-color: var(--brown-900)" data-colour="--brown-900"></span>
+
+
+    <span draggable="true" style="background-color: var(--yellow-300)" data-colour="--yellow-300"></span>
+
+    <span draggable="true" style="background-color: var(--yellow-500)" data-colour="--yellow-500"></span>
+
+    <span draggable="true" style="background-color: var(--yellow-700)" data-colour="--yellow-700"></span>
+
+
+    <span draggable="true" style="background-color: var(--orange-300)" data-colour="--orange-300"></span>
+
+    <span draggable="true" style="background-color: var(--orange-500)" data-colour="--orange-500"></span>
+
+    <span draggable="true" style="background-color: var(--orange-700)" data-colour="--orange-700"></span>
+
+
+    <span draggable="true" style="background-color: var(--pink-300)" data-colour="--pink-300"></span>
+
+    <span draggable="true" style="background-color: var(--pink-500)" data-colour="--pink-500"></span>
+
+    <span draggable="true" style="background-color: var(--pink-700)" data-colour="--pink-700"></span>
+
+   </div> -->
+
+
+
+   </main>
+   <iframe id="page-holder" src="/"></iframe>
+   <script src="/textpattern/vendors/jquery/jquery/jquery.js"></script>
+   <script>
+     $(document).ready(function() {
+       //const iframe = $('#page-holder');
+       const iframe = document.getElementById("page-holder");
+
+      $('.lab select').change(function() {
+         const out = $(this)[0].value;
+         const property = $(this).parent().find('select').attr('data-property');
+         const type = $(this).parent().find('select').attr('type');
+         // document.documentElement.style.setProperty('--' + property, 'var(' + out + ')');
+         if(type == 'color') {
+            iframe.contentWindow.document.documentElement.style.setProperty('--' + property, 'var(' + out + ')');
+
+         } else {
+            iframe.contentWindow.document.documentElement.style.setProperty('--' + property, out);
+         }
+       });
+       $('.lab input[type="text"]').change(function() {
+         const out = $(this)[0].value;
+         const property = $(this).attr('data-property');
+         const unit = $(this).attr('data-unit');
+         // if (unit == 'numeric') {
+         //   console.log(property + ': ' + out);
+         // }
+         iframe.contentWindow.document.documentElement.style.setProperty('--' + property, out);
+       });
+       $('.lab input[type="number"]').each(function() {
+         const property = $(this).attr('data-property');
+         const unit = $(this).attr('data-unit');
+         const pValue = $(this)[0];
+         const out = pValue.value;
+         pValue.addEventListener('input', () => {
+           const out = (pValue.value) + unit;
+           iframe.contentWindow.document.documentElement.style.setProperty('--' + property, out);
+         });
+       });
+
+       // $('.has-palette').focus(function() {
+         //  //$('.palette').addClass('is-active');
+       // })
+       // $('.has-palette').blur(function() {
+         //  // $('.palette').removeClass('is-active');
+        // })
+//
+       // $('[data-colour]').click(function() {
+         //  $('#text').attr('value','var(' + $(this).attr('data-colour') + ')');
+//
+//
+         // // alert($(this).attr('data-colour'));
+       // })
+
+
+
+       $('.lab input[type="color"]').change(function() {
+          const out = $(this)[0].value;
+          const property = $(this).attr('data-property');
+          //const pText = $(this).prev()[0];
+          $(this).prev().attr('value', out);
+          iframe.contentWindow.document.documentElement.style.setProperty('--' + property, out);
+        });
+
+     });
+   </script>
+ </body>
+
+ </html>

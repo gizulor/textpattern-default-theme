@@ -7,7 +7,7 @@
     <article class="comments" itemscope itemtype="https://schema.org/Comment">
 </txp:if_variable>
 
-    <h6>
+    <h4 class="h6-style">
         <span class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
             <span itemprop="name">
                 <txp:comment_name />
@@ -26,7 +26,7 @@
             <txp:comment_permlink>#</txp:comment_permlink>
         </span>
 
-    </h6>
+    </h4>
 
     <!-- also add a 'since' to show comment freshness -->
     <p class="footnote">
