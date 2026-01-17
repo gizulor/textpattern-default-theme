@@ -21,10 +21,10 @@
                 <!-- search results -->
                 <txp:output_form form="search_display" />
             <txp:else />
-                <txp:if_variable name="front-page">
+                <txp:if_variable name="page_context" value="home">
                     <!-- front page -->
                     <!-- links by default to form: 'default.txp' unless a different form is specified -->
-                    <txp:article limit="5" />
+                    <txp:article limit="1" />
                 <txp:else />
                     <!-- listing page -->
                     <txp:if_author>

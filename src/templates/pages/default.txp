@@ -15,25 +15,25 @@
 
     <txp:output_form form="body_header" />
 
-        <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/Blog">
+        <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/WebPage">
 
             <txp:if_search>
                 <!-- search results -->
                 <txp:output_form form="search_display" />
             <txp:else />
-                <txp:if_variable name="front-page">
+                <txp:if_variable name="page_context" value="home">
                     <!-- front page -->
                     <!-- links by default to form: 'default.txp' unless a different form is specified -->
-                    <txp:article limit="5" />
+                    <txp:article limit="1" />
                 <txp:else />
                     <!-- listing page -->
                     <txp:if_author>
                         <!-- page author heading  -->
-                        <h3 itemprop="name"><txp:text item="author" /> <txp:author /></h3>
+                        <h1 itemprop="name"><txp:text item="author" />: <txp:author /></h1>
                     <txp:else />
                         <txp:if_category>
                             <!-- page category heading -->
-                            <h3 itemprop="name"><txp:text item="category" /> <txp:category title /></h3>
+                            <h1 itemprop="name"><txp:text item="category" />: <txp:category title /></h1>
                         </txp:if_category>
                     </txp:if_author>
                     <!-- default limit is 10 articles -->
