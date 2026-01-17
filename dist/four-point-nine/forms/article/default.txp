@@ -2,12 +2,15 @@
     <meta itemprop="mainEntityOfPage" content="<txp:permlink />">
     <header class="article__header">
             <h1 itemprop="headline" class="h1-style">
-                                    <txp:if_individual_article>
-                    <txp:title />
-                <txp:else />
-                    <a href="<txp:permlink />" itemprop="url" title="<txp:text item=" read_more" />"><txp:title /></a>
-                </txp:if_individual_article>
-                                </h1>
+                <txp:title />
+               <txp:hide>
+                    <txp:if_individual_article>
+                        <txp:title />
+                    <txp:else />
+                        <a href="<txp:permlink />" itemprop="url" title="<txp:text item=" read_more" />"><txp:title /></a>
+                    </txp:if_individual_article>
+                </txp:hide>
+            </h1>
 
             <div itemprop="description">
                 <txp:excerpt escape="tags" wraptag="h2" class="h5-style" />
