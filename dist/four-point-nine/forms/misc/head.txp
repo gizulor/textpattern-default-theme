@@ -1,86 +1,29 @@
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title><txp:page_title /></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title><txp:page_title /></title>
 
-    <!-- CSS -->
-<txp:hide>
+  <!-- CSS -->
+  <txp:hide>
     <!-- Temp: Use file system for development -->
     <txp:css format="link" media="" />
-</txp:hide>
+  </txp:hide>
 
+  <txp:if_logged_in><!-- Temp: css variable testing -->
+    <link rel="stylesheet" href="https://txp-latest/textpattern-default-theme/dist/four-point-nine/styles/<txp:evaluate><txp:page_url type="style" /><txp:else />style-wireframe.css</txp:evaluate>">
+    <link rel="stylesheet" href="https://txp-latest/textpattern-default-theme/dist/four-point-nine/styles/default.css">
+  <txp:else />
     <!-- or use external CSS files so you can open them in your preferred editor -->
-    <!-- Temp: css variable testing -->
     <link rel="stylesheet" href="/textpattern-default-theme/dist/four-point-nine/styles/<txp:evaluate><txp:page_url type="style" /><txp:else />style-wireframe.css</txp:evaluate>">
     <link rel="stylesheet" href="/textpattern-default-theme/dist/four-point-nine/styles/default.css">
     <!-- <link rel="stylesheet" href="<txp:page_url type="theme_path" />/styles/default.css"> -->
+  </txp:if_logged_in>
 
-    <meta name="generator" content="Textpattern CMS">
+  <meta name="generator" content="Textpattern CMS">
 
-    <txp:if_search>
-        <meta name="robots" content="none">
-    <txp:else />
-        <txp:if_author>
-            <meta name="robots" content="noindex, follow">
-        <txp:else />
-            <txp:meta_description />
+  <txp::head_metas />
 
-            <txp:variable name="page" value='<txp:page_url type="pg" />' />
-
-            <txp:if_section name=",default">
-
-              <txp:if_category>
-                  <meta name="robots" content="noindex, follow">
-              <txp:else />
-                  <txp:if_variable name="page" value="1">
-                    <!-- default / homepage-->
-                      <meta name="robots" content="index, follow">
-                      <link rel="canonical" href="<txp:site_url />">
-                      <txp::schema type="WebPage" url='<txp:site_url escape="json" />' headline='<txp:site_name escape="json" />' />
-                  <txp:else />
-                      <meta name="robots" content="noindex, follow">
-                  </txp:if_variable>
-                  <txp:variable name="front-page" value="1" />
-              </txp:if_category>
-
-            <txp:else />
-
-              <txp:if_article_list>
-                  <txp:if_variable name="page" value="1">
-                      <meta name="robots" content="index, follow">
-                      <link rel="canonical" href="<txp:section url />">
-                      <txp::schema type="WebPage" url='<txp:section url escape="json" />' headline='<txp:section title escape="json" />' />
-                  <txp:else />
-                      <meta name="robots" content="noindex, follow">
-                  </txp:if_variable>
-              <txp:else />
-                  <txp:meta_keywords separator="," />
-                  <txp:meta_author title />
-                  <meta name="robots" content="<txp:if_expires>unavailable_after: <txp:expires gmt format="%d-%b-%y %T" /> GMT<txp:else />index, follow</txp:if_expires>">
-                  <link rel="canonical" href="<txp:permlink />">
-                  <txp::schema type="WebPage" url='<txp:permlink escape="json" />' headline='<txp:title escape="json" />' />
-
-                  <meta property="og:site_name" content="<txp:site_name />">
-                  <meta property="og:type" content="article">
-                  <meta property="og:title" content="<txp:title />">
-                  <txp:if_description><meta property="og:description" content="<txp:meta_description format="" />"></txp:if_description>
-                  <meta property="og:url" content="<txp:permlink />">
-                  <txp:if_article_image>
-                      <txp:images limit="1">
-                          <meta property="og:image" content="<txp:image_url />">
-                          <meta property="og:image:width" content="<txp:image_info type="w" />">
-                          <meta property="og:image:height" content="<txp:image_info type="h" />">
-                          <meta property="og:image:alt" content="<txp:image_info type="alt" />">
-                      </txp:images>
-                  </txp:if_article_image>
-              </txp:if_article_list>
-            </txp:if_section>
-
-
-        </txp:if_author>
-    </txp:if_search>
-
-    <!-- content feeds -->
-    <txp:feed_link flavor="atom" format="link" label="Atom" />
-    <txp:feed_link flavor="rss" format="link" label="RSS" />
+  <!-- content feeds -->
+  <txp:feed_link flavor="atom" format="link" label="Atom" />
+  <txp:feed_link flavor="rss" format="link" label="RSS" />
 </head>
