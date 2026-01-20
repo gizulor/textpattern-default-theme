@@ -1,23 +1,23 @@
 <figure>
   <txp:variable name="ext" value='<txp:image_info type="ext" />' />
   <txp:if_variable name="ext" value=".svg">
+    <!-- svg images don't use thumbs -->
     <txp:image />
   <txp:else />
-      <img srcset="<txp:image_url thumbnail width="320" /> 320w,
-          <txp:image_url thumbnail width="640" /> 640w,
-          <txp:image_url thumbnail width="1280" /> 1280w,
-          <txp:image_url thumbnail width="2560" /> 2560w"
-          sizes="auto"
-          width="<txp:image_info type="w" />"
-          height="<txp:image_info type="h" />"
-          loading="lazy"
-          alt="<txp:image_info type='alt' default='<txp:image_info type='name' trim='<txp:image_info type="ext" />' />' />"
-      />
-    </txp:if_variable>
-    <txp:evaluate>
-        <figcaption itemprop="caption" class="small">
-            <!-- image_info without a type attribute outputs the caption -->
-            <txp:image_info escape="textile"/>
-        </figcaption>
-    </txp:evaluate>
+    <img srcset="<txp:image_url thumbnail width=" 320" /> 320w,
+    <txp:image_url thumbnail width="640" /> 640w,
+    <txp:image_url thumbnail width="1280" /> 1280w,
+    <txp:image_url thumbnail width="2560" /> 2560w"
+    sizes="auto"
+    width="<txp:image_info type="w" />"
+    height="<txp:image_info type="h" />"
+    loading="lazy"
+    alt="<txp:image_info type="alt" default='<txp:image_info type="name" trim='<txp:image_info type="ext" />' />' />" />
+  </txp:if_variable>
+  <txp:evaluate>
+    <figcaption itemprop="caption" class="small">
+      <!-- image_info without a type attribute outputs the caption -->
+      <txp:image_info escape="textile" />
+    </figcaption>
+  </txp:evaluate>
 </figure>
