@@ -7,6 +7,7 @@
     <title><txp:error_status /></title>
 
     <!-- CSS -->
+    <txp:css format="link" media="" name="wireframe" />
     <txp:css format="link" media="" />
     <!-- ...or you can use (faster) external CSS files e.g. <link rel="stylesheet" href="<txp:page_url type="theme_path" />/styles/default.css"> -->
 

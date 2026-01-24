@@ -1,50 +1,56 @@
 @use "0-settings/breakpoints";
 :root {
    /* Variable font-sizing to suit viewport size */
-   --min-fs: .8125; /* min size in rems */
+   --min-fs: 1; /* min size in rems */
    --max-fs: 1;     /* max size in rems */
    --min-vw: 20;    /* min viewport width in rems */
-   --max-vw: 108;   /* max viewport width in rems */
+   --max-vw: 160;   /* max viewport width in rems */
 
    /* Type */
    --sans: system-ui, sans-serif;
    --serif: 'PT Serif', Baskerville, serif;
    --mono: ui-monospace, monospace;
-   --font-heading: var(--sans);
+   --font-heading: Rockwell, var(--sans);
    --font-body: var(--sans);
    --weight-normal: 300;
    --weight-heavy: 500;
    --weight-heading: var(--weight-heavy);
    --weight-header: var(--weight-heavy);
-   --font-stretch: normal;
    --base-line-height: 1.5;
    --type-measure: 96ch;
-   /* Heading sizes (Major Third type scale) */
-   --h1: 3.052rem;
-   --h2: 2.441rem;
-   --h3: 1.953rem;
-   --h4: 1.563rem;
-   --h5: 1.25rem;
+   /* Heading sizes */
+   --h1: 5vw;
+   --h2: 3vw;
+   --h3: 2vw;
+   --h4: var(--h3);
+   --h5: 1.5rem;
    --h6: 1rem;
 
+
    /* Common Header */
-   --header-size: var(--h4);
+   --header-size: var(--h3);
 
    /* UI spacing */
-   --content-limit: 1280px;
-   --gap: 1.5rem;
+   --content-limit: 80%;
+   --gap: 2rem;
    --gap--s: calc(var(--gap) / 2);
    --gap--ss: calc(var(--gap) / 4);
    --gap--b: calc(var(--gap) * 2);
-   --border-width: 2px;
+   --border-width: 3px;
 
    /* Colour assignments */
-   --clr-text: var(--black);
+   --clr-text: var(--bone);
    --clr-heading: var(--clr-text);
-   --clr-bg: var(--white);
-   --clr-bg--header: var(--white);
+   --clr-bg: var(--grey-800);
+   --clr-bg--header: var(--clr-bg);
    --clr-link:  var(--clr-text);
    --clr-border: var(--clr-text);
+
+   /* Layout */
+   --header-grid: auto 1fr auto;
+   --article-grid: 1fr 1fr ;
+   --list-grid: repeat(auto-fill, minmax(420px, 1fr));
+
    ::selection {
      background-color: var(--clr-text);
      color: var(--clr-bg);

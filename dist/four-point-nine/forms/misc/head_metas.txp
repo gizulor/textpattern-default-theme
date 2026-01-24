@@ -1,44 +1,67 @@
   <txp:if_search>
+
   <txp:variable name="page_context" value="search" />
   <meta name="robots" content="none">
+
 <txp:else />
+
   <txp:if_author>
+
     <txp:variable name="page_context" value="author" />
     <meta name="robots" content="noindex, follow">
+
   <txp:else />
+
     <txp:meta_description />
     <txp:variable name="paging" value='<txp:page_url type="pg" />' />
 
     <txp:if_section name=",default">
+
       <txp:if_category>
+
         <meta name="robots" content="noindex, follow">
+
       <txp:else />
+
         <txp:variable name="page_context" value="home" />
 
         <txp:if_variable name="paging" value="1">
+
           <!-- default / homepage -->
           <meta name="robots" content="index, follow">
           <link rel="canonical" href="<txp:site_url />">
           <txp::schema type="WebPage" url='<txp:site_url escape="json" />' headline='<txp:site_name escape="json" />' />
+
         <txp:else />
+
           <!-- page_url has pg=2 or more-->
           <meta name="robots" content="noindex, follow">
+
         </txp:if_variable>
+
       </txp:if_category>
+
     <txp:else />
 
       <txp:if_article_list>
+
         <txp:variable name="page_context" value="listing" />
 
         <txp:if_variable name="paging" value="1">
+
           <!-- listing landing page -->
           <meta name="robots" content="index, follow">
           <link rel="canonical" href="<txp:section url />">
           <txp::schema type="WebPage" url='<txp:section url escape="json" />' headline='<txp:section title escape="json" />' />
+
         <txp:else />
+
           <meta name="robots" content="noindex, follow">
+
         </txp:if_variable>
+
       <txp:else />
+
         <txp:variable name="page_context" value="article" />
 
         <txp:meta_keywords separator="," />
@@ -53,6 +76,7 @@
         <txp:if_description>
           <meta property="og:description" content="<txp:meta_description format="" />">
         </txp:if_description>
+
         <meta property="og:url" content="<txp:permlink />">
 
         <txp:if_article_image>
@@ -63,6 +87,7 @@
             <meta property="og:image:alt" content="<txp:image_info type="alt" />">
           </txp:images>
         </txp:if_article_image>
+
       </txp:if_article_list>
     </txp:if_section>
   </txp:if_author>

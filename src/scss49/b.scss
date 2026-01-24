@@ -49,6 +49,12 @@
    --clr-bg--header: hsla(0, 0%, 100%, 0.825);
    --clr-link:  var(--clr-text);
    --clr-border: var(--clr-text);
+
+   /* Layout */
+    --header-grid: 1fr auto;
+    --article-grid: 1fr ;
+    --list-grid: repeat(2, minmax(0, 1fr));
+
    ::selection {
      background-color: var(--clr-text);
      color: var(--clr-bg);

@@ -1,6 +1,5 @@
 <article class="article" itemprop="Article" itemscope itemtype="https://schema.org/Article">
     <meta itemprop="mainEntityOfPage" content="<txp:permlink />">
-    <header class="article__header">
             <h1 itemprop="headline" class="h1-style">
                 <txp:title />
                <txp:hide>
@@ -11,10 +10,6 @@
                     </txp:if_individual_article>
                 </txp:hide>
             </h1>
-
-            <div itemprop="description">
-                <txp:excerpt escape="tags" wraptag="h2" class="h5-style" />
-            </div>
        <dl>
             <txp:text item="posted" wraptag="dt" />
             <dd><time datetime="<txp:posted format="iso8601" />" itemprop="datePublished"><txp:posted /></time></dd>
@@ -57,7 +52,10 @@
             </txp:if_article_category>
         </dl>
 
-    </header>
+            <div itemprop="description">
+                <txp:excerpt escape="tags" wraptag="h2" class="h2-style" />
+            </div>
+
 
 
     <txp:if_article_image>

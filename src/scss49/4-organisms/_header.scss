@@ -7,6 +7,7 @@
   font-weight: var(--weight-header);
 
   &__container {
+    position: relative;
     display: grid;
     gap: 0 var(--gap);
     padding: var(--gap--s) var(--gap);
@@ -16,14 +17,9 @@
     grid-template-columns: auto 1fr;
 
     @media (min-width: breakpoints.$small) {
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: var(--header-grid,auto 1fr auto);
     }
 
-    >* {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
 
     >p,
     search {
@@ -38,7 +34,12 @@
 
   search {
     justify-self: end;
-   // position: relative;
+    align-self: start;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    // position: absolute;
+    // right: 0;
+    // top: 0;
    // flex-direction: row;
    // min-width: var(--gap--b);
     form {
@@ -82,7 +83,8 @@
 }
 
 .site-navigation {
-  justify-self: center;
+  width: 100%;
+ // justify-self: center;
   >ul {
     display: flex;
     flex-wrap: wrap;

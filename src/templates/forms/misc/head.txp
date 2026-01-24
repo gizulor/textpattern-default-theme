@@ -10,11 +10,11 @@
   </txp:hide>
 
   <txp:if_logged_in><!-- Temp: css variable testing -->
-    <link rel="stylesheet" href="https://txp-latest/textpattern-default-theme/dist/four-point-nine/styles/<txp:evaluate><txp:page_url type="style" /><txp:else />style-wireframe.css</txp:evaluate>">
+    <link rel="stylesheet" href="https://txp-latest/textpattern-default-theme/dist/four-point-nine/styles/<txp:evaluate><txp:page_url type="style" /><txp:else />wireframe.css</txp:evaluate>">
     <link rel="stylesheet" href="https://txp-latest/textpattern-default-theme/dist/four-point-nine/styles/default.css">
   <txp:else />
     <!-- or use external CSS files so you can open them in your preferred editor -->
-    <link rel="stylesheet" href="/textpattern-default-theme/dist/four-point-nine/styles/<txp:evaluate><txp:page_url type="style" /><txp:else />style-wireframe.css</txp:evaluate>">
+    <link rel="stylesheet" href="/textpattern-default-theme/dist/four-point-nine/styles/<txp:evaluate><txp:page_url type="style" /><txp:else />wireframe.css</txp:evaluate>">
     <link rel="stylesheet" href="/textpattern-default-theme/dist/four-point-nine/styles/default.css">
     <!-- <link rel="stylesheet" href="<txp:page_url type="theme_path" />/styles/default.css"> -->
   </txp:if_logged_in>

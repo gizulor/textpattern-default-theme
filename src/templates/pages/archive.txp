@@ -25,7 +25,7 @@
                     <h1 itemprop="name"><txp:section title /><txp:evaluate>: <txp:category title /></txp:evaluate></h1>
 
                     <!-- default limit is 10 articles -->
-                   <txp:article class="article-list" form="article_listing"  wraptag="ul" class="list-bare auto-grid" />
+                   <txp:article class="article-list" form="article_listing"  wraptag="ul" class="list list-bare" />
                 <txp:else />
                     <txp:article status />
                 </txp:if_article_list>

@@ -11,7 +11,7 @@ h4,
 .h4-style,
 h5,
 .h5-style {
-  line-height: 1;
+  line-height: 1.1;
   margin-block-end: .5cap;
   text-wrap: balance;
   overflow-wrap: break-word;
@@ -22,8 +22,8 @@ h5,
 
 h1,
 .h1-style {
- margin-block-start: .5cap;
- font-size: var(--h1);
+  margin-block-start: .5cap;
+  font-size: var(--h1);
 }
 
 h2,
@@ -51,7 +51,7 @@ h5,
 }
 
 h6,
-.h6-style  {
+.h6-style {
   //margin-block-start: 1cap;
   font-size: var(--h6);
   font-weight: var(--weight-heavy);
@@ -66,14 +66,18 @@ a {
     text-decoration-thickness: var(--border-width);
   }
 }
-
-p {
+.p-style {
+  font-size: 1rem;
+  font-weight: var(--weight-normal);
+}
+p,
+.p-style {
   text-wrap: pretty;
   overflow-wrap: break-word;
   max-width: var(--type-measure);
   margin-block-end: var(--gap);
 
-  &:last-of-type:not(figcaption &) {
+  &:last-of-type {
     margin-block-end: 0;
   }
 }
@@ -93,15 +97,18 @@ th {
   font-weight: var(--weight-heavy);
 }
 
-ul,
-ol {
-  padding-inline-start: var(--gap);
+[itemprop="articleBody"] {
+
+  ul,
+  ol,
+  dl {
+    margin-block-end: var(--gap);
+  }
 }
 
 ul,
-ol,
-dl {
-  margin-block-end: var(--gap);
+ol {
+  padding-inline-start: var(--gap);
 }
 
 ul {
@@ -119,7 +126,7 @@ li {
 }
 
 dl {
- overflow: auto; // allow for floated elements
+  overflow: auto; // allow for floated elements
 }
 
 dt,
@@ -131,6 +138,7 @@ dt {
   float: left;
   min-width: 12ch;
 }
+
 dd {
   //margin-inline-start: var(--gap);
 }
@@ -166,7 +174,6 @@ p>img,
 p>figure {
   margin-block: var(--gap);
 }
-
 
 table,
 pre {

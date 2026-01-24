@@ -3,49 +3,53 @@
 
 <txp:output_form form="head" />
 
-<txp:if_variable name="front-page">
-    <body class="front-page" itemscope itemtype="https://schema.org/WebPage">
+<txp:if_variable name="page_context" value="home">
+  <body class="front-page" itemscope itemtype="https://schema.org/WebPage">
 <txp:else />
-    <txp:if_search>
-        <body class="search-page" itemscope itemtype="https://schema.org/SearchResultsPage">
+    <txp:if_variable name="page_context" value="search">
+      <body class="search-page" itemscope itemtype="https://schema.org/SearchResultsPage">
     <txp:else />
-        <body class="listing-page" itemscope itemtype="https://schema.org/CollectionPage">
-    </txp:if_search>
+      <body class="listing-page" itemscope itemtype="https://schema.org/CollectionPage">
+    </txp:if_variable>
 </txp:if_variable>
 
-    <txp:output_form form="body_header" />
+  <txp:output_form form="body_header" />
 
-        <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/WebPage">
+  <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/WebPage">
 
-            <txp:if_search>
-                <!-- search results -->
-                <txp:output_form form="search_display" />
-            <txp:else />
-                <txp:if_variable name="page_context" value="home">
-                    <!-- front page -->
-                    <!-- links by default to form: 'default.txp' unless a different form is specified -->
-                    <txp:article limit="1" />
-                <txp:else />
-                    <!-- listing page -->
-                    <txp:if_author>
-                        <!-- page author heading  -->
-                        <h1 itemprop="name"><txp:text item="author" />: <txp:author /></h1>
-                    <txp:else />
-                        <txp:if_category>
-                            <!-- page category heading -->
-                            <h1 itemprop="name"><txp:text item="category" />: <txp:category title /></h1>
-                        </txp:if_category>
-                    </txp:if_author>
-                    <!-- default limit is 10 articles -->
-                    <txp:article form="article_listing" wraptag="ul" class="article__list" />
-                </txp:if_variable>
-                <txp:output_form form="body_pagination" />
-            </txp:if_search>
+    <txp:if_search>
+      <!-- search results -->
+      <txp:output_form form="search_display" />
+    <txp:else />
+      <txp:if_variable name="page_context" value="home">
+        <!-- links by default to form: 'default.txp' unless a different form is specified -->
+        <txp:article limit="5" />
+      <txp:else />
+        <!-- listing page -->
+        <txp:if_author>
+          <!-- page author heading  -->
+          <h1 itemprop="name" class="h2-style"><txp:text item="author" />: <txp:author /></h1>
+        <txp:else />
+          <txp:if_category>
+            <!-- page category heading -->
+            <h1 itemprop="name" class="h2-style"><txp:text item="category" />: <txp:category title /></h1>
+          </txp:if_category>
+        </txp:if_author>
 
-        </main>
+        <!-- default limit is 10 articles -->
+        <txp:article form="article_listing" wraptag="ul" class="list" />
 
-        <txp:output_form form="body_aside" />
-        <txp:output_form form="body_footer" />
+      </txp:if_variable>
 
-    </body>
+      <txp:output_form form="body_pagination" />
+
+    </txp:if_search>
+
+  </main>
+
+  <txp:output_form form="body_footer">
+    <txp:output_form form="body_aside" />
+  </txp:output_form>
+
+</body>
 </html>
