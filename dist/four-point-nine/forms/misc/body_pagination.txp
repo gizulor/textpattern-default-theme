@@ -2,28 +2,20 @@
 
   <txp:evaluate test="newer,older">
     <!-- add pagination links if there are more articles available -->
-      <nav class="paginator" aria-label="<txp:text item="page_nav" />">
-          <txp:newer rel="prev">
-              <txp:text item="newer" />
-          </txp:newer>
-          <txp:older rel="next">
-              <txp:text item="older" />
-          </txp:older>
-      </nav>
+    <nav class="paginator">
+      <txp:newer rel="prev"><txp:text item="newer" /></txp:newer>
+      <txp:older rel="next"><txp:text item="older" /></txp:older>
+    </nav>
   </txp:evaluate>
 
 <txp:else />
 
   <txp:evaluate test="link_to_prev,link_to_next">
     <!-- add pagination links if there are more articles available -->
-      <nav class="paginator" aria-label="<txp:text item="page_nav" />">
-          <txp:link_to_prev>
-              <txp:text item="prev" />
-          </txp:link_to_prev>
-          <txp:link_to_next>
-              <txp:text item="next" />
-          </txp:link_to_next>
-      </nav>
+    <nav class="paginator">
+      <txp:link_to_prev><txp:text item="prev" /></txp:link_to_prev>
+      <txp:link_to_next><txp:text item="next" /></txp:link_to_next>
+    </nav>
   </txp:evaluate>
 
 </txp:if_article_list>

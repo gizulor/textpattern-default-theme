@@ -6,7 +6,7 @@
   font-size: var(--header-size);
   font-weight: var(--weight-header);
 
-  &__container {
+  &__inner {
     position: relative;
     display: grid;
     gap: 0 var(--gap);
@@ -31,6 +31,11 @@
   [rel="home"] {
     text-decoration: none;
   }
+  .mag-glass {
+    position: absolute;
+    z-index: -1;
+    width: var(--gap);
+  }
 
   search {
     justify-self: end;
@@ -45,11 +50,6 @@
     form {
       position: relative;
     }
-    svg {
-      position: absolute;
-      z-index: -1;
-      width: var(--gap);
-    }
     input {
       width: var(--gap);
       border: 0;
@@ -59,7 +59,8 @@
         opacity: 0;
       }
 
-      &:focus {
+      &:focus,
+      &[value] {
         width: auto;
         outline: 0;
         margin-left: var(--gap--b);
