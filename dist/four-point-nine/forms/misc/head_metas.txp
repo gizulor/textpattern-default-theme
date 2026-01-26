@@ -1,4 +1,4 @@
-  <txp:if_search>
+<txp:if_search>
 
   <txp:variable name="page_context" value="search" />
   <meta name="robots" content="none">
@@ -53,6 +53,30 @@
           <meta name="robots" content="index, follow">
           <link rel="canonical" href="<txp:section url />">
           <txp::schema type="WebPage" url='<txp:section url escape="json" />' headline='<txp:section title escape="json" />' />
+
+
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "<txp:site_url />"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                <txp:if_description>"description": "<txp:meta_description format="" escape="json" />",</txp:if_description>,
+                  "name": "<txp:section title />",
+
+                "item": "<txp:page_url />"
+              }
+            ]
+          }
+          </script>
 
         <txp:else />
 
