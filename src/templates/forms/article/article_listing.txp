@@ -1,32 +1,34 @@
-<li class="thumb" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-    <a href="<txp:permlink />" itemprop="url mainEntityOfPage" title="<txp:text item=" read_more" />">
-        <txp:if_article_image>
-            <txp:images form="images" limit="1" />
-        </txp:if_article_image>
-        <h2 itemprop="headline" class="h3-style">
-            <txp:title />
-        </h2>
+<li class="thumb">
+
+    <a href="<txp:permlink />" title="<txp:text item="read_more" />">
+      <txp:if_article_image>
+          <txp:images form="images" limit="1" />
+      </txp:if_article_image>
+      <h2 itemprop="headline" class="h3-style">
+          <txp:title />
+      </h2>
     </a>
+
     <txp:if_excerpt>
-        <div itemprop="description">
-            <txp:excerpt escape="tags" wraptag="h3" class="h5-style"/>
-        </div>
+      <div itemprop="description">
+        <txp:excerpt escape="tags" wraptag="h3" class="h5-style"/>
+      </div>
     </txp:if_excerpt>
+
     <txp:hide>
       <p class="footnote">
-          <small>
-              <txp:text item="posted" />
-              <time datetime="<txp:posted format=" iso8601" />" itemprop="datePublished">
-                  <txp:posted />
-              </time>
-              <meta itemprop="dateModified" content="<txp:modified format=" iso8601" />" /> &#183;
-              <txp:text item="author" />
-              <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-                  <span itemprop="name">
-                      <txp:author link this_section />
-                  </span>
-              </span>
-          </small>
+        <small>
+          <txp:text item="posted" />
+          <time datetime="<txp:posted format="iso8601" />" itemprop="datePublished">
+            <txp:posted />
+          </time>
+          <meta itemprop="dateModified" content="<txp:modified format="iso8601" />" /> &#183;
+          <txp:text item="author" />
+          <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name"><txp:author link this_section /></span>
+          </span>
+        </small>
       </p>
     </txp:hide>
+
 </li>

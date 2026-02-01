@@ -4,39 +4,48 @@
 <txp:output_form form="head" />
 
 <txp:if_search>
-    <body class="search-page" itemscope itemtype="https://schema.org/SearchResultsPage">
+  <body class="search-page" itemscope itemtype="https://schema.org/SearchResultsPage">
 <txp:else />
-    <txp:if_article_list>
-        <body class="<txp:section />-page" itemscope itemtype="https://schema.org/CollectionPage">
-    <txp:else />
-        <body class="<txp:section />-page" itemscope itemtype="https://schema.org/WebPage">
-    </txp:if_article_list>
+  <txp:if_article_list>
+    <body class="<txp:section />-page" itemscope itemtype="https://schema.org/CollectionPage">
+  <txp:else />
+    <body class="article-page">
+  </txp:if_article_list>
 </txp:if_search>
 
     <txp:output_form form="body_header" />
 
-        <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/CreativeWork">
+    <main id="main">
 
-            <txp:if_search>
-                <!-- search results -->
-                <txp:output_form form="search_display" />
-            <txp:else />
-                <txp:if_article_list>
-                    <h1 itemprop="name"><txp:section title /><txp:evaluate>: <txp:category title /></txp:evaluate></h1>
+      <txp:if_search>
 
-                    <!-- default limit is 10 articles -->
-                   <txp:article class="article-list" form="article_listing"  wraptag="ul" class="list list-bare" />
-                <txp:else />
-                    <txp:article status />
-                </txp:if_article_list>
-                <txp:output_form form="body_pagination" />
-           </txp:if_search>
-            <hr />
+        <!-- search results -->
+        <txp:output_form form="search_display" />
 
-        </main>
+      <txp:else />
 
-        <txp:output_form form="body_aside" />
-        <txp:output_form form="body_footer" />
+        <txp:if_article_list>
+
+          <h1><txp:section title /><txp:evaluate>: <txp:category title /></txp:evaluate></h1>
+          <!-- default limit is 10 articles -->
+          <txp:article class="article-list" form="article_listing"  wraptag="ul" class="list list-bare" />
+
+        <txp:else />
+
+          <txp:article status />
+
+        </txp:if_article_list>
+
+        <txp:output_form form="body_pagination" />
+
+      </txp:if_search>
+      <hr />
+
+    </main>
+
+    <txp:output_form form="body_footer">
+      <txp:output_form form="body_aside" />
+    </txp:output_form>
 
     </body>
 </html>

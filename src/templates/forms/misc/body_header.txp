@@ -1,19 +1,26 @@
 <a class="visually-hidden" href="#main"><txp:text item="go_content" /></a>
 <header class="header">
-    <div class="header__container">
-        <div>
-            <txp:link_to_home><txp:site_name /></txp:link_to_home>
-          <txp:site_slogan wraptag="p" class="p-style" />
-        </div>
-        <nav id="navigation" class="site-navigation" aria-label="<txp:text item=" site_nav" />" itemscope itemtype="https://schema.org/SiteNavigationElement"> <txp:section_list wraptag="ul" break="" class="list-bare">
-                <li<txp:if_section name='<txp:section />'> class="active"</txp:if_section>>
-            <a itemprop="url" href="<txp:section url />" <txp:if_section name='<txp:section />'> aria-current="page"</txp:if_section>>
-                <txp:section title />
-            </a>
-        </li>
-            </txp:section_list>
-        </nav>
-        <!-- links by default to form: 'search_input.txp' unless you specify a different form -->
-        <txp:search_input />
+  <div class="header__inner">
+
+    <div>
+      <txp:link_to_home><txp:site_name /></txp:link_to_home>
+      <txp:site_slogan wraptag="p" class="p-style" />
     </div>
+
+    <nav id="navigation" class="site-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+
+      <txp:section_list wraptag="ul" break="" class="list-bare">
+        <li<txp:if_section name='<txp:section />'> class="active"</txp:if_section>>
+          <a href="<txp:section url />" <txp:if_section name='<txp:section />'> aria-current="page"</txp:if_section>>
+              <txp:section title />
+          </a>
+        </li>
+      </txp:section_list>
+
+    </nav>
+
+    <!-- links by default to form: 'search_input.txp' unless you specify a different form -->
+    <txp:search_input />
+
+  </div>
 </header>

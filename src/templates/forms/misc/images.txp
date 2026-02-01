@@ -15,7 +15,7 @@
     alt="<txp:image_info type="alt" default='<txp:image_info type="name" trim='<txp:image_info type="ext" />' />' />" />
   </txp:if_variable>
   <txp:evaluate>
-    <figcaption itemprop="caption" class="small">
+    <figcaption class="small">
       <!-- image_info without a type attribute outputs the caption -->
       <txp:image_info escape="textile" />
     </figcaption>
