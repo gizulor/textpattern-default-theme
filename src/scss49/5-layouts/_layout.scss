@@ -66,6 +66,6 @@
   align-items: end;
 
   @media (min-width: breakpoints.$small) {
-    grid-template-columns: var(--header-grid, auto 1fr auto);
+    grid-template-columns: var(--banner-grid, auto 1fr auto);
   }
 }

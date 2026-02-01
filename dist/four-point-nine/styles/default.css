@@ -363,7 +363,7 @@ Components & layout
 }
 @media (min-width: 720px) {
   .header__inner {
-    grid-template-columns: var(--header-grid, auto 1fr auto);
+    grid-template-columns: var(--banner-grid, auto 1fr auto);
   }
 }
 .header__inner > p,
@@ -434,6 +434,7 @@ Components & layout
 }
 .site-navigation li.active {
   font-weight: var(--weight-heavy);
+  text-decoration: underline;
 }
 .site-navigation li a {
   text-decoration: none;
@@ -501,7 +502,7 @@ Components & layout
 @media (min-width: 720px) {
   .paginator,
   .site-footer {
-    grid-template-columns: var(--header-grid, auto 1fr auto);
+    grid-template-columns: var(--banner-grid, auto 1fr auto);
   }
 }
 

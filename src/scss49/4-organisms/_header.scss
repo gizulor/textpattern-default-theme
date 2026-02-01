@@ -17,7 +17,7 @@
     grid-template-columns: auto 1fr;
 
     @media (min-width: breakpoints.$small) {
-      grid-template-columns: var(--header-grid,auto 1fr auto);
+      grid-template-columns: var(--banner-grid,auto 1fr auto);
     }
 
 
@@ -99,7 +99,8 @@
 
     &.active {
       font-weight: var(--weight-heavy);
-    }
+ text-decoration: underline;
+   }
 
     a {
       text-decoration: none;

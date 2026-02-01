@@ -41,7 +41,7 @@
   --clr-link: var(--clr-text);
   --clr-border: var(--clr-text);
   /* Layout */
-  --header-grid: auto 1fr auto;
+  --banner-grid: auto 1fr auto;
   --article-grid: 1fr ;
   --list-grid: repeat(3, minmax(0, 1fr));
 }
